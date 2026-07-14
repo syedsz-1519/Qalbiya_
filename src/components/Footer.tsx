@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, MessageSquare, Heart, Instagram, Compass, Mail } from 'lucide-react';
 import { Route } from '../types';
+import logoImg from '../assets/images/logo.jpg';
 
 interface FooterProps {
   onNavigate: (route: Route, courseSlug?: string) => void;
@@ -110,18 +111,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
           
           {/* Logo & Vision Block */}
           <div className="md:col-span-4 space-y-6">
-            <div className="flex items-center space-x-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#EAD5D8] bg-white text-[#8E4B59] text-lg font-bold shadow-sm">
-                ق
-              </div>
-              <div>
-                <h3 className="serif-heading text-lg font-bold tracking-wide text-[#2E1F21]">
-                  QALBIYA
-                </h3>
-                <p className="text-[10px] font-bold tracking-widest text-[#8E4B59] uppercase">
-                  Islamic Institute
-                </p>
-              </div>
+            <div className="flex items-center">
+              <img 
+                src={logoImg} 
+                alt="Qalbiya Logo" 
+                className="h-16 w-auto mix-blend-multiply object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+                onClick={() => onNavigate('home')}
+              />
             </div>
             
             <p className="text-sm leading-relaxed text-[#5C464A]">

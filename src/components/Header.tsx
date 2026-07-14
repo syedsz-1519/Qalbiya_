@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Sparkles, BookOpen, Heart, Info, FileText, Send, Mail } from 'lucide-react';
 import { Route } from '../types';
+import logoImg from '../assets/images/logo.jpg';
 
 interface HeaderProps {
   currentRoute: Route;
@@ -72,19 +73,11 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                 Qalbiya
               </h1>
             ) : (
-              <>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-accent-gold/30 bg-panel-dark text-accent-gold shadow-md transition-all duration-300 group-hover:border-accent-gold group-hover:bg-panel-light">
-                  <span className="serif-heading text-xl font-bold">ق</span>
-                </div>
-                <div>
-                  <h1 className="serif-heading text-lg font-bold tracking-wide text-text-cream group-hover:text-accent-gold transition-colors duration-300">
-                    QALBIYA
-                  </h1>
-                  <p className="text-[10px] font-medium tracking-widest text-accent-gold uppercase">
-                    Islamic Institute
-                  </p>
-                </div>
-              </>
+              <img 
+                src={logoImg} 
+                alt="Qalbiya Logo" 
+                className="h-14 md:h-16 w-auto mix-blend-multiply object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             )}
           </div>
 
