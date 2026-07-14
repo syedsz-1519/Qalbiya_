@@ -1,6 +1,8 @@
 import { Course } from './types';
 import quranRehalImg from './assets/images/quran_rehal_arched_window_1784016809949.jpg';
 import sacredLearningImg from './assets/images/sacred_learning_approach_1784016791330.jpg';
+import kidsStudyImg from './assets/images/kids_online_study_1784048706942.jpg';
+import onlineLearningImg from './assets/images/online_learning_tablet_1784039716228.jpg';
 
 export const coursesData: Course[] = [
   {
@@ -251,58 +253,77 @@ Every lesson is built to answer one question: how do I carry this into my own li
     slug: 'juniors-deeniyat-mastercourse',
     category: 'kids',
     title: 'Juniors Deeniyat Mastercourse',
-    badge: '🔥 Flagship Program',
+    badge: '🔥 Popular',
     hook: 'A complete Islamic foundation, built to last a lifetime.',
-    sub: 'A structured, age-appropriate program for children ages 6–12 — covering Qur\'an, Seerah, Sahaba, daily sunnah, and akhlaq, so your child doesn\'t just learn Islam, they grow up loving it.',
+    sub: 'A structured, age-appropriate program for children 6–12 — covering Qur\'an, Seerah, Sahaba, daily sunnah, and akhlaq, so your child doesn\'t just learn Islam, they grow up loving it.',
+    description: `This is Qalbiya's most complete children's program — a full Islamic foundation built over time, not rushed. Your child will grow through each stage of learning with structure, consistency, and genuine understanding.`,
     duration: '1.5–2 Years',
     price: 'Rs. 600',
-    priceDetail: 'per month',
+    priceDetail: 'month',
     syllabus: [
-      'Tajweed & Makharij (Reciting Qur\'an correctly from the start)',
-      'Asma-ul-Husna (Learning who Allah is through His beautiful attributes)',
-      'Prophet Stories (Interactive lessons on the Prophets of Allah)',
-      'Sahaba Stories (Drawing inspiration from the companions)',
-      'Seerat-un-Nabi ﷺ (Nurturing deep love for our Prophet)',
-      'Daily Masnoon Duas & Sunnah (Establishing beautiful daily routines)',
-      'Aqaid & Islamic Tarbiyah (Building resilient Islamic morals and belief)'
+      'Tajweed & Makharij',
+      'Asma-ul-Husna',
+      'Prophet Stories',
+      'Sahaba Stories',
+      'Seerat-un-Nabi صلى الله عليه وسلم',
+      'Daily Masnoon Duas',
+      'Daily Sunnah & Hadith',
+      'Aqaid',
+      'Namaz & Masail',
+      'Islamic Tarbiyah (character & values development)'
     ],
     whatYouGet: [
-      '🎮 Interactive educational games & storytelling aids',
-      '🧩 Weekly fun quizzes and reward points system',
-      '💬 Dedicated WhatsApp support for parental progress tracking',
-      '🎓 Flagship Deeniyat Graduation Certificate'
+      '🎮 Interactive lessons with games and attractive visuals designed to hold a child\'s attention',
+      '🧩 Regular quizzes made fun, not stressful — built to reinforce learning through play',
+      '📝 Regular tests to track your child\'s progress',
+      '💬 WhatsApp support for parents outside class hours',
+      '🎓 Certificate on completion'
     ],
     outcome: 'Your child won\'t just learn about Islam — they\'ll grow up loving it. By the end, they\'ll read Qur\'an with correct tajweed, know the stories of the Prophets and Sahaba by heart, practice their daily sunnah with ease, and carry akhlaq rooted in the seerah — a strong Islamic foundation built to last a lifetime.',
-    howLearn: 'Our approach is calm, warm, and respectful, completely avoiding the rigid, pressure-heavy structures of traditional schooling. We focus on nurturing the natural fitrah (pure nature) of each child at their own natural pace.',
+    howLearn: 'Every class is designed to feel calm, warm, and genuinely enjoyable — never rushed, never pressured. Lessons come alive through attractive visuals, interactive games, and playful quizzes, so children stay engaged and actually look forward to class. Correction is always gentle, encouragement is constant, and every child learns at a pace that feels right for them.',
     courseDetails: {
-      'Age Group': 'Children ages 6–12',
-      'Format': 'Private (1-on-1) or Group Classes',
+      'Age Group': '6–12 years',
+      'Format': 'Private (1-on-1) or Group',
       'Platform': 'Google Meet',
-      'Duration': '1.5 to 2 Years',
-      'Group Fee': 'Rs. 600/month',
-      'Private (1-on-1) Fee': 'Rs. 1,000/month'
+      'Duration': '1.5–2 years (varies by child\'s pace)',
+      'Fee (Private)': 'Rs. 1,000/month',
+      'Fee (Group)': 'Rs. 600/month'
     },
-    teacherNote: 'As someone who has taught children in this age group, I know a class only truly works when a child feels safe, engaged, and deeply loved. We teach with stories and encouragement, never with guilt or pressure.',
+    teacherNote: 'As someone who has taught children in this age group, I know a class only truly works when a child feels safe, engaged, and loved — not just taught. Every lesson I build is calm, gentle, and genuinely fun, with visuals, games, and quizzes that make learning feel like discovery, not pressure. I teach every child the way I\'d want my own child taught — with patience, warmth, and real care.\n\n— Mustara, Founder of Qalbiya Institute',
     whoThisIsFor: [
-      'Parents looking for a single, comprehensive program to ground their child\'s Islamic identity',
-      'Children who thrive with interactive, storyteller-style instruction rather than rote memorization',
-      'Families desiring to build consistent daily Islamic habits (prayers, duas, manners) in their home'
+      'For parents who want more than scattered Islamic lessons — who want their child to build one complete, lasting foundation in Deen, taught with structure and care.'
     ],
     faqs: [
       {
-        q: 'Do we have to commit to the full 2 years upfront?',
-        a: 'Not at all. Billing is monthly, and you can pause or withdraw your child at any time. We want your child to attend because they love the classes.'
+        q: 'Do we have to commit to the full 1.5–2 years right away?',
+        a: 'Not at all. Many parents start with just one month to see how their child responds. Once you see the change in your child\'s understanding, confidence, and love for their deen, most families choose to continue the full journey — but the choice is always yours.'
       },
       {
-        q: 'How do you track the progress of the children?',
-        a: 'We send regular, personalized progress updates to parents via WhatsApp, sharing what was covered and celebrating the child\'s micro-milestones.'
+        q: 'What age group is this course for?',
+        a: 'Children ages 6–12. Pacing is adjusted based on each child\'s age and learning speed.'
       },
       {
-        q: 'What is the difference between Group and Private formats?',
-        a: 'Group classes offer a beautiful social environment with other children. Private (1-on-1) classes allow the teacher to focus 100% on your child\'s unique pace, which is ideal for kids needing individual attention.'
+        q: 'How long does the course take?',
+        a: 'Typically 1.5–2 years, depending on your child\'s individual pace — this is a complete foundation, not a rushed program.'
+      },
+      {
+        q: 'What\'s the difference between private and group classes?',
+        a: 'Both follow the same complete syllabus. Private (1-on-1) classes offer individual attention and a schedule built around your child, while group classes follow a set schedule with other children, at a lower monthly fee.'
+      },
+      {
+        q: 'How will I know how my child is progressing?',
+        a: 'Regular tests are conducted throughout the course to track your child\'s progress, and parents receive WhatsApp support for any questions outside class hours.'
+      },
+      {
+        q: 'Will my child receive a certificate?',
+        a: 'Yes — a certificate is given upon completing the course.'
+      },
+      {
+        q: 'Is this online or in-person?',
+        a: 'Fully online, conducted via Google Meet.'
       }
     ],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCIChl9WJbHpagdXCDb_enr6Yi-pSgeFREx1lc_KKo5t-kFXXDvWkg2so8IQHIzSjYShsyvEwyMkNhH28E0iGLTPl8tg3gCiSboJ5jX69ur3JJgGxZVL5TEHPe9ogP7PRm_Ad2fZxdXPfgBBIRUr1a8uDc5Sck3P00WAxOxuAQtEI0M4j2ekwCC9lexSS707Q8UgrS9nYz7UmGiWHkhAfUqc1oqAXErnqjgLRVKX7kutIZDj2fcoSLFZw'
+    image: onlineLearningImg
   },
   {
     slug: 'noorani-qaida-kids',
@@ -311,52 +332,66 @@ Every lesson is built to answer one question: how do I carry this into my own li
     badge: '🔥 Foundation Path',
     hook: 'The first step to reading Qur\'an.',
     sub: 'A gentle, structured introduction to the Arabic letters and Noorani Qaida — helping your child begin their Qur\'an journey with a strong, correct foundation.',
+    description: `This course introduces your child to the Arabic letters — helping them recognize, read, and write each one — before moving through the complete Noorani Qaida with foundational Tajweed rules. By the end, your child will be ready to begin reading the Qur\'an itself.`,
     duration: '4–5 Months',
     price: 'Rs. 500',
-    priceDetail: 'per month',
+    priceDetail: 'month',
     syllabus: [
-      'Arabic alphabet recognition, reading, and stroke-guided writing',
-      'Perfecting correct pronunciation of challenging Arabic letters',
-      'Completing the classic Noorani Qaida curriculum step-by-step',
-      'Learning foundational Tajweed rules (joining letters, basic vowels)',
-      'Patient correction of common beginner vocal mistakes'
+      'Arabic letter recognition, reading, and writing',
+      'Complete Noorani Qaida',
+      'Foundational Tajweed rules',
+      'Gentle correction of common beginner mistakes'
     ],
     whatYouGet: [
-      '🎮 Fun interactive lessons, digital flashcards & games',
-      '🧩 Age-appropriate bite-sized quizzes',
-      '📓 Friendly weekly homework assignments',
-      '💬 Dedicated parent-teacher WhatsApp support line',
-      '🎓 Noorani Qaida Graduation Certificate'
+      '🎮 Interactive lessons with games and attractive visuals designed to hold a child\'s attention',
+      '🧩 Fun quizzes built to reinforce learning through play',
+      '📓 Regular homework to build consistency',
+      '💬 WhatsApp support for parents outside class hours',
+      '🎓 Certificate on completion'
     ],
     outcome: 'By the end of this course, your child will take their very first real step into the Qur\'an — reading it, not just recognizing the letters — with a solid foundation that everything else in their Qur\'an journey will be built on.',
-    howLearn: 'Every teacher is chosen and trained to teach children the way they actually learn best: through visual aids, patience, constant encouragement, and gentle correction that builds their confidence.',
+    howLearn: 'Every class is designed to feel calm, warm, and genuinely enjoyable — never rushed, never pressured. Lessons come alive through attractive visuals, interactive games, and playful quizzes, so children stay engaged and actually look forward to class. Correction is always gentle, encouragement is constant, and every child learns at a pace that feels right for them.',
     courseDetails: {
-      'Age Group': 'Children ages 6–12',
-      'Format': '1-on-1 Private Sessions',
+      'Age Group': '6–12 years',
+      'Format': '1-on-1 (private)',
       'Platform': 'Google Meet',
-      'Duration': '4 to 5 Months (varies based on child\'s pace)',
+      'Duration': '4–5 months (varies by child\'s pace)',
       'Fee': 'Rs. 500/month'
     },
-    teacherNote: 'Every teacher at Qalbiya is trained to build a warm connection with your child first. When a child loves their teacher, they naturally grow to love the Deen and the Qur\'an.',
+    teacherNote: 'Every teacher at Qalbiya is chosen and trained to teach children the way children actually learn best — with patience, warmth, and genuine care. Whether it\'s your child\'s first Arabic letter or their hundredth, our teachers make sure every lesson feels safe, encouraging, and worth looking forward to.\n\n— Mustara, Founder of Qalbiya Islamic Institute',
     whoThisIsFor: [
-      'Children starting their Qur\'an learning journey with zero prior Arabic knowledge',
-      'Children who need a highly encouraging, patient, and personalized 1-on-1 environment to build confidence',
-      'Parents seeking to ensure correct pronunciation of Makharij from the absolute beginning'
+      'For parents who want their child to begin the Qur\'an the right way — with a calm, structured, and correct foundation from the very first letter.'
     ],
     faqs: [
       {
-        q: 'Is this class strictly 1-on-1?',
-        a: 'Yes, our Noorani Qaida for Kids is taught exclusively in a 1-on-1 private format to ensure the instructor can carefully listen to and guide your child\'s exact pronunciation of every single letter.'
+        q: 'What age group is this course for?',
+        a: 'Children ages 6–12.'
       },
       {
-        q: 'How long are the classes?',
-        a: 'Classes are generally 30 to 45 minutes long, which is the optimal concentration window for children in this age bracket.'
+        q: 'Does my child need any prior knowledge?',
+        a: 'No — this course starts from the very beginning, with the Arabic letters themselves.'
       },
       {
-        q: 'How do you handle homework?',
-        a: 'Homework is gentle and highly visual (e.g. practicing a single line or playing a digital matching game). We aim to make it something they look forward to rather than a chore.'
+        q: 'How long does the course take?',
+        a: 'Typically 4–5 months, depending on your child\'s individual pace.'
+      },
+      {
+        q: 'Is this a group class or 1-on-1?',
+        a: 'This course is taught 1-on-1, with class timing built around your child\'s schedule.'
+      },
+      {
+        q: 'Is there homework?',
+        a: 'Yes — regular homework is given to help build consistency in your child\'s learning.'
+      },
+      {
+        q: 'Will my child receive a certificate?',
+        a: 'Yes — a certificate is given upon completing the course.'
+      },
+      {
+        q: 'Is this online or in-person?',
+        a: 'Fully online, conducted via Google Meet.'
       }
     ],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDM-hUmLvgRXgl3Qmqh7Po9KMxYn8HGFEiVMJbmt21bDtIS4rdrIS9GwE-36XMv_rCEbD6Cwnm4kqbGvHrJYqu5EJHlSBvWY-uJnvOsnw4x4dwzoG005otrBGL8Vf3Lv7Vt4BsRCaGm2wJrBft-ngAZTvg80KDuYOt7DjS7IqVzx3B_lsGnpijJnCsdrqosR3z_LBZ14pySA2G-6XYfkB_RhN52dSN7QeIpe2gI3cAwTQtAn2neD-wZfw'
+    image: kidsStudyImg
   }
 ];

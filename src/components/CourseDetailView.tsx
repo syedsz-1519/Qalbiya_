@@ -59,7 +59,7 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
           </p>
 
           {/* Core Outcomes */}
-          {course.slug !== 'seerah-course' && course.slug !== 'pre-diploma-deeniyat' && (
+          {course.slug !== 'seerah-course' && course.slug !== 'pre-diploma-deeniyat' && course.slug !== 'noorani-qaida-kids' && course.slug !== 'juniors-deeniyat-mastercourse' && (
             <div className="p-6 rounded-2xl border border-brand-border bg-panel-dark/40 space-y-3">
               <h3 className="serif-heading text-base font-bold text-text-cream">The Sacred Outcome</h3>
               <p className="text-xs leading-relaxed text-text-sage">
@@ -133,15 +133,15 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
             </div>
           </div>
 
-          {/* Section 4: The Outcome (specifically styled for Seerah & Deeniyat courses) */}
-          {(course.slug === 'seerah-course' || course.slug === 'pre-diploma-deeniyat') && (
+          {/* Section 4: The Outcome (specifically styled for Seerah, Deeniyat, and Kids' courses) */}
+          {(course.slug === 'seerah-course' || course.slug === 'pre-diploma-deeniyat' || course.slug === 'noorani-qaida-kids' || course.slug === 'juniors-deeniyat-mastercourse') && (
             <div className="p-8 rounded-3xl border border-brand-border bg-panel-light text-text-cream space-y-4 shadow-sm relative overflow-hidden">
               <span className="text-[10px] font-bold text-accent-gold uppercase tracking-widest">The Outcome</span>
               <p className="serif-heading text-lg sm:text-xl font-medium leading-relaxed italic relative z-10">
                 "{course.outcome}"
               </p>
               <div className="absolute right-4 bottom-2 text-accent-gold/5 pointer-events-none font-serif text-8xl sm:text-9xl leading-none select-none uppercase font-bold">
-                {course.slug === 'seerah-course' ? 'Akhlaq' : 'Deen'}
+                {course.slug === 'seerah-course' ? 'Akhlaq' : (course.slug === 'pre-diploma-deeniyat' ? 'Deen' : (course.slug === 'noorani-qaida-kids' ? 'Quran' : 'Tarbiyah'))}
               </div>
             </div>
           )}
