@@ -73,11 +73,13 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                 Qalbiya
               </h1>
             ) : (
-              <img 
-                src={logoImg} 
-                alt="Qalbiya Logo" 
-                className="h-14 md:h-16 w-auto mix-blend-multiply object-contain transition-transform duration-300 group-hover:scale-105"
-              />
+              <div className="h-14 w-14 md:h-16 md:w-16 rounded-full overflow-hidden flex items-center justify-center bg-transparent transition-transform duration-300 group-hover:scale-105">
+                <img 
+                  src={logoImg} 
+                  alt="Qalbiya Logo" 
+                  className="h-full w-full object-cover scale-[1.08] mix-blend-multiply"
+                />
+              </div>
             )}
           </div>
 

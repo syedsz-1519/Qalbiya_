@@ -112,12 +112,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
           {/* Logo & Vision Block */}
           <div className="md:col-span-4 space-y-6">
             <div className="flex items-center">
-              <img 
-                src={logoImg} 
-                alt="Qalbiya Logo" 
-                className="h-16 w-auto mix-blend-multiply object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+              <div 
+                className="h-16 w-16 rounded-full overflow-hidden flex items-center justify-center bg-transparent cursor-pointer transition-transform duration-300 hover:scale-105"
                 onClick={() => onNavigate('home')}
-              />
+              >
+                <img 
+                  src={logoImg} 
+                  alt="Qalbiya Logo" 
+                  className="h-full w-full object-cover scale-[1.08] mix-blend-multiply"
+                />
+              </div>
             </div>
             
             <p className="text-sm leading-relaxed text-[#5C464A]">
