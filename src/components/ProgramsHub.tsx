@@ -314,7 +314,7 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
-              {/* WhatsApp Admission */}
+              {/* WhatsApp Us */}
               <a 
                 href="https://wa.me/918145363290?text=Assalamu%20Alaikum%2C%20I%20am%20interested%20in%20enrolling%20my%20child%20in%20Qalbiya%20Islamic%20Institute."
                 target="_blank"
@@ -323,10 +323,10 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
                 id="kids-cta-whatsapp"
               >
                 <MessageSquare className="w-4 h-4 fill-white text-[#12D164]" />
-                <span>WhatsApp Admission</span>
+                <span>WhatsApp Us</span>
               </a>
 
-              {/* Instagram Follow */}
+              {/* DM on Instagram */}
               <a 
                 href="https://instagram.com/qalbiya_institute"
                 target="_blank"
@@ -335,7 +335,7 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
                 id="kids-cta-instagram"
               >
                 <Instagram className="w-4 h-4 text-[#D82D7E]" />
-                <span>Follow on Instagram</span>
+                <span>DM on Instagram</span>
               </a>
             </div>
 
@@ -360,12 +360,12 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
           <span>Sisters Academic Circles</span>
         </div>
 
-        <h1 className="serif-heading text-4xl sm:text-5xl font-bold text-text-cream tracking-tight">
-          Women's Sacred Academic Hub
+        <h1 className="serif-heading text-3.5xl sm:text-4.5xl md:text-5.5xl font-bold text-text-cream tracking-tight max-w-3xl mx-auto leading-tight">
+          Every woman's journey back to Allah looks different. Here's yours.
         </h1>
         
         <p className="max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-text-sage">
-          A safe space for adult sisters to learn Tajweed, Seerah, and Deeniyat rules without anxiety. Guided by qualified female scholars who understand your lifestyle.
+          Whether you're correcting your recitation, healing your character, or building your foundation from the ground up — there's a program made for exactly where you are.
         </p>
 
         {/* Swapper between Hubs */}
@@ -381,8 +381,8 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
       </section>
 
       {/* Courses Grid */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10" id="hub-courses-grid">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-10" id="hub-courses-grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {filteredCourses.map((course) => (
             <CourseCard 
               key={course.slug} 
@@ -454,7 +454,7 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
       </section>
 
       {/* Sincerity Banner */}
-      <section className="mx-auto max-w-4xl px-4 text-center space-y-6" id="hub-sincerity">
+      <section className="mx-auto max-w-4xl px-4 text-center space-y-12" id="hub-sincerity">
         <div className="p-8 rounded-3xl border border-brand-border bg-panel-dark/40">
           <h3 className="serif-heading text-xl font-bold text-text-cream">Need Financial Accommodation?</h3>
           <p className="text-xs text-text-sage mt-2 max-w-xl mx-auto leading-relaxed">
@@ -467,6 +467,37 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
           >
             Apply for Sponsorship
           </button>
+        </div>
+
+        {/* Women Hub Closing CTA */}
+        <div className="border border-dashed border-brand-border rounded-3xl p-8 sm:p-12 text-center bg-panel-light/50 backdrop-blur-sm shadow-sm max-w-3xl mx-auto space-y-6">
+          <h2 className="serif-heading text-xl sm:text-2xl font-bold text-text-cream leading-relaxed max-w-2xl mx-auto">
+            Not sure which one is right for you? Message us — we'll help you find your starting point.
+          </h2>
+          
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a 
+              href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Sister%20Mustara%2C%20I'm%20not%20sure%20which%20program%20is%20right%20for%20me.%20Can%20you%20help%20me%20find%20my%20starting%20point%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#12D164] hover:bg-[#0FB856] text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-full inline-flex items-center space-x-2 shadow-sm transition-all duration-300 cursor-pointer w-full sm:w-auto justify-center"
+              id="women-hub-cta-whatsapp"
+            >
+              <MessageSquare className="w-4 h-4 fill-white text-[#12D164]" />
+              <span>WhatsApp Us</span>
+            </a>
+
+            <a 
+              href="https://instagram.com/qalbiya_institute"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-panel-dark hover:bg-panel-light text-text-cream border border-brand-border text-xs sm:text-sm font-semibold px-6 py-3 rounded-full inline-flex items-center space-x-2 shadow-sm transition-all duration-300 cursor-pointer w-full sm:w-auto justify-center"
+              id="women-hub-cta-instagram"
+            >
+              <Instagram className="w-4 h-4 text-[#D82D7E]" />
+              <span>DM on Instagram</span>
+            </a>
+          </div>
         </div>
       </section>
 

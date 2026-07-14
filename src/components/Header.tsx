@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Sparkles, BookOpen, Heart, Info, FileText, Send, Mail } from 'lucide-react';
+import { Menu, X, Sparkles, BookOpen, Heart, Info, FileText, Send, Mail, ChevronDown } from 'lucide-react';
 import { Route } from '../types';
 import logoImg from '../assets/images/logo.png';
 
@@ -11,6 +11,8 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const isKids = currentRoute === 'kids';
 
   const handleNavClick = (route: Route) => {
@@ -49,8 +51,6 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
 
   const regularNavItems = [
     { label: 'Home', onClick: () => handleNavClick('home'), isActive: currentRoute === 'home', icon: Sparkles },
-    { label: "Women's Hub", onClick: () => handleNavClick('women'), isActive: currentRoute === 'women', icon: Heart },
-    { label: "Kids' Hub", onClick: () => handleNavClick('kids'), isActive: currentRoute === 'kids', icon: BookOpen },
     { label: 'Free Courses', onClick: () => handleNavClick('free-courses'), isActive: currentRoute === 'free-courses', icon: Send },
     { label: 'About', onClick: () => handleNavClick('about'), isActive: currentRoute === 'about', icon: Info },
     { label: 'Scholarship', onClick: () => handleNavClick('scholarship'), isActive: currentRoute === 'scholarship', icon: FileText },
@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                 <img 
                   src={logoImg} 
                   alt="Qalbiya Logo" 
-                  className="h-full w-full object-cover scale-[1.08] mix-blend-multiply"
+                  className="h-full w-full object-contain mix-blend-multiply"
                 />
               </div>
             )}
@@ -108,32 +108,110 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                 </button>
               ))
             ) : (
-              regularNavItems.map((item) => {
-                const Icon = item.icon;
-                const isActive = item.isActive;
-                return (
+              <>
+                {/* Home Item */}
+                {(() => {
+                  const item = regularNavItems[0];
+                  const Icon = item.icon;
+                  const isActive = item.isActive;
+                  return (
+                    <button
+                      key={item.label}
+                      onClick={item.onClick}
+                      className={`relative flex items-center space-x-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
+                        isActive 
+                          ? 'text-accent-gold bg-panel-dark border border-accent-gold/20' 
+                          : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
+                      }`}
+                      id={`nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
+                    >
+                      <Icon className={`w-4 h-4 ${isActive ? 'text-accent-gold' : 'text-text-sage/70'}`} />
+                      <span>{item.label}</span>
+                      {isActive && (
+                        <motion.span 
+                          layoutId="activeNavIndicator" 
+                          className="absolute bottom-0 left-3 right-3 h-[2px] bg-accent-gold rounded-full"
+                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </button>
+                  );
+                })()}
+
+                {/* Programs Dropdown */}
+                <div 
+                  className="relative"
+                  onMouseEnter={() => setIsDropdownOpen(true)}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                >
                   <button
-                    key={item.label}
-                    onClick={item.onClick}
                     className={`relative flex items-center space-x-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
-                      isActive 
+                      currentRoute === 'women' || currentRoute === 'kids'
                         ? 'text-accent-gold bg-panel-dark border border-accent-gold/20' 
                         : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
                     }`}
-                    id={`nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
+                    id="nav-item-programs"
                   >
-                    <Icon className={`w-4 h-4 ${isActive ? 'text-accent-gold' : 'text-text-sage/70'}`} />
-                    <span>{item.label}</span>
-                    {isActive && (
-                      <motion.span 
-                        layoutId="activeNavIndicator" 
-                        className="absolute bottom-0 left-3 right-3 h-[2px] bg-accent-gold rounded-full"
-                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                      />
-                    )}
+                    <BookOpen className={`w-4 h-4 ${currentRoute === 'women' || currentRoute === 'kids' ? 'text-accent-gold' : 'text-text-sage/70'}`} />
+                    <span>Programs</span>
+                    <ChevronDown className="w-3.5 h-3.5 opacity-70" />
                   </button>
-                );
-              })
+
+                  <AnimatePresence>
+                    {isDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="absolute top-full left-0 mt-1 w-48 rounded-xl border border-brand-border bg-panel-dark shadow-lg py-2 z-50 overflow-hidden"
+                      >
+                        <button
+                          onClick={() => { handleNavClick('women'); setIsDropdownOpen(false); }}
+                          className="flex w-full items-center px-4 py-2.5 text-sm text-text-sage hover:text-accent-gold hover:bg-panel-light/40 transition-colors cursor-pointer text-left font-medium"
+                        >
+                          <Heart className="w-4 h-4 mr-2 text-rose-400" />
+                          <span>Women's Programs</span>
+                        </button>
+                        <button
+                          onClick={() => { handleNavClick('kids'); setIsDropdownOpen(false); }}
+                          className="flex w-full items-center px-4 py-2.5 text-sm text-text-sage hover:text-accent-gold hover:bg-panel-light/40 transition-colors cursor-pointer text-left font-medium"
+                        >
+                          <BookOpen className="w-4 h-4 mr-2 text-accent-gold" />
+                          <span>Kids' Programs</span>
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Remaining Items */}
+                {regularNavItems.slice(1).map((item) => {
+                  const Icon = item.icon;
+                  const isActive = item.isActive;
+                  return (
+                    <button
+                      key={item.label}
+                      onClick={item.onClick}
+                      className={`relative flex items-center space-x-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
+                        isActive 
+                          ? 'text-accent-gold bg-panel-dark border border-accent-gold/20' 
+                          : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
+                      }`}
+                      id={`nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
+                    >
+                      <Icon className={`w-4 h-4 ${isActive ? 'text-accent-gold' : 'text-text-sage/70'}`} />
+                      <span>{item.label}</span>
+                      {isActive && (
+                        <motion.span 
+                          layoutId="activeNavIndicator" 
+                          className="absolute bottom-0 left-3 right-3 h-[2px] bg-accent-gold rounded-full"
+                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </button>
+                  );
+                })}
+              </>
             )}
           </nav>
 
@@ -205,25 +283,88 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                   </button>
                 ))
               ) : (
-                regularNavItems.map((item) => {
-                  const Icon = item.icon;
-                  const isActive = item.isActive;
-                  return (
+                <>
+                  {/* Home Item */}
+                  {(() => {
+                    const item = regularNavItems[0];
+                    const Icon = item.icon;
+                    const isActive = item.isActive;
+                    return (
+                      <button
+                        key={item.label}
+                        onClick={item.onClick}
+                        className={`flex w-full items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                          isActive 
+                            ? 'bg-panel-dark text-accent-gold border border-accent-gold/20' 
+                            : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
+                        }`}
+                        id={`mobile-nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
+                      >
+                        <Icon className="w-5 h-5 text-accent-gold" />
+                        <span>{item.label}</span>
+                      </button>
+                    );
+                  })()}
+
+                  {/* Programs Expandable Toggle */}
+                  <div className="space-y-1">
                     <button
-                      key={item.label}
-                      onClick={item.onClick}
-                      className={`flex w-full items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                        isActive 
+                      onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+                      className={`flex w-full items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                        currentRoute === 'women' || currentRoute === 'kids'
                           ? 'bg-panel-dark text-accent-gold border border-accent-gold/20' 
                           : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
                       }`}
-                      id={`mobile-nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
+                      id="mobile-nav-item-programs"
                     >
-                      <Icon className="w-5 h-5 text-accent-gold" />
-                      <span>{item.label}</span>
+                      <div className="flex items-center space-x-3">
+                        <BookOpen className="w-5 h-5 text-accent-gold" />
+                        <span>Programs</span>
+                      </div>
+                      <ChevronDown className={`w-4 h-4 text-accent-gold transition-transform duration-300 ${isMobileDropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
-                  );
-                })
+                    
+                    {isMobileDropdownOpen && (
+                      <div className="pl-6 space-y-1 bg-panel-light/20 rounded-xl py-1">
+                        <button
+                          onClick={() => { handleNavClick('women'); setIsOpen(false); }}
+                          className="flex w-full items-center px-4 py-2.5 rounded-lg text-sm font-medium text-text-sage hover:text-accent-gold transition-colors cursor-pointer text-left"
+                        >
+                          <Heart className="w-4 h-4 mr-2 text-rose-400" />
+                          <span>Women's Programs</span>
+                        </button>
+                        <button
+                          onClick={() => { handleNavClick('kids'); setIsOpen(false); }}
+                          className="flex w-full items-center px-4 py-2.5 rounded-lg text-sm font-medium text-text-sage hover:text-accent-gold transition-colors cursor-pointer text-left"
+                        >
+                          <BookOpen className="w-4 h-4 mr-2 text-accent-gold" />
+                          <span>Kids' Programs</span>
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Remaining Items */}
+                  {regularNavItems.slice(1).map((item) => {
+                    const Icon = item.icon;
+                    const isActive = item.isActive;
+                    return (
+                      <button
+                        key={item.label}
+                        onClick={item.onClick}
+                        className={`flex w-full items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                          isActive 
+                            ? 'bg-panel-dark text-accent-gold border border-accent-gold/20' 
+                            : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
+                        }`}
+                        id={`mobile-nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
+                      >
+                        <Icon className="w-5 h-5 text-accent-gold" />
+                        <span>{item.label}</span>
+                      </button>
+                    );
+                  })}
+                </>
               )}
 
               <div className="pt-4 border-t border-brand-border">

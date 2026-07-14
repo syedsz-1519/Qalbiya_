@@ -1,4 +1,6 @@
 import { Course } from './types';
+import quranRehalImg from './assets/images/quran_rehal_arched_window_1784016809949.jpg';
+import sacredLearningImg from './assets/images/sacred_learning_approach_1784016791330.jpg';
 
 export const coursesData: Course[] = [
   {
@@ -7,52 +9,68 @@ export const coursesData: Course[] = [
     title: 'Seerah of Prophet ﷺ Course',
     badge: '🔥 Popular — Joined by 50+ students',
     hook: 'Let his character reshape yours.',
-    sub: 'A deep, reflective journey into the beautiful character, mercy, and daily life of the Prophet ﷺ to inspire your personal spiritual transformation.',
+    sub: 'A complete journey through the life of the Prophet ﷺ — from birth to wisal — not just to learn his story, but to let his akhlaq become yours.',
+    description: `This course takes you through the complete Seerah of the Prophet ﷺ — his birth, his challenges, his patience, his mercy, and every stage of his life until his wisal. But this isn't a course about memorizing history.
+
+Every lesson is built to answer one question: how do I carry this into my own life? You'll learn how to beautify your akhlaq the way his akhlaq was beautified, and how to find real solutions to your own life's problems through the lessons of the Seerah — not just knowledge, but application.`,
     duration: '2 Months',
     price: 'Rs. 299',
-    priceDetail: 'full course',
+    priceDetail: 'month (or Rs. 499 one-time)',
     syllabus: [
-      'Introduction to Seerah & why we study it',
-      'Pre-Islamic Arabia and his childhood',
-      'The Year of Sadness & Mi\'raj lessons',
-      'Character traits of the Prophet ﷺ as a husband, father, and leader',
-      'Developing deep love and connection with the Prophet ﷺ'
+      'His birth and childhood: lessons on patience and early character development',
+      'The Prophethood and early challenges: standing firm in the face of adversity',
+      'His patience, mercy, and compassion under trial and hardship',
+      'Every stage of his life until his wisal (passing)',
+      'Akhlaq in action: learning how to beautify your character the way his was beautified',
+      'Practical solutions: applying lessons from the Seerah to solve your own modern problems'
     ],
     whatYouGet: [
-      '📄 Structured lesson summaries & reflection worksheets',
-      '💬 Weekly live Q&A sessions',
-      '👥 Private community support group',
-      '🎓 Course Completion Certificate'
+      '📖 Complete Seerah taught from birth to wisal, with real-life application in every lesson',
+      '✍️ You\'ll build your own notes as you learn — because writing it yourself is what makes it settle in the heart, and these notes become your own guide for the final exam',
+      '🧠 Weekly quizzes to reinforce what you\'ve learned and keep you on track',
+      '📝 Final exam at the end of the course',
+      '💬 WhatsApp support outside class hours for questions and guidance',
+      '🎓 Certificate on completion'
     ],
-    outcome: 'By the end of this course, you will have a deep, heart-centered understanding of the Prophet\'s life and character, with practical habits to emulate his beautiful example in your modern life.',
+    outcome: 'With seriousness, sincerity, and by following your Ustadha\'s guidance, this course will soften your heart, beautify your akhlaq, and give you real, practical solutions to your own life\'s struggles — straight from the life of the Prophet ﷺ.',
     courseDetails: {
-      'Format': 'Group Interactive Sessions',
+      'Format': 'Group class, online',
       'Platform': 'Google Meet',
-      'Duration': '2 Months',
-      'Classes': '2 classes/week, 1hr each',
-      'Fee': 'Rs. 299/month or Rs. 500 one-time'
+      'Duration': '2 months',
+      'Classes': '3 per week, 1 hour each',
+      'Fee': 'Rs. 299/month, or Rs. 499 one-time for the full course'
     },
-    teacherNote: 'Studying the Seerah is not about learning historical dates; it\'s about letting the light of his character illuminate your heart.',
+    teacherNote: 'The Seerah changed the way I see my own struggles — not as things to just get through, but as moments the Prophet ﷺ himself lived and taught us how to carry. I built this course hoping it does the same for you.\n\n— Mustara, Founder of Qalbiya Institute',
     whoThisIsFor: [
-      'Sisters seeking a heart-centered reconnection with the Prophet ﷺ',
-      'Sisters looking to improve their character and akhlaq',
-      'Beginners and intermediate students alike'
+      'For every woman who wants more than just the story of the Prophet ﷺ — who wants his mercy, his patience, and his character to actually live in her.'
     ],
     faqs: [
       {
-        q: 'Is any prior knowledge required?',
-        a: 'No, this course is open to all sisters regardless of their level of knowledge.'
+        q: 'Do I need any prior knowledge to join?',
+        a: 'No prior knowledge is required — this course is structured for every level, from someone hearing the Seerah in depth for the first time to someone deepening what they already know.'
       },
       {
-        q: 'Are classes live or recorded?',
-        a: 'Classes are live on Google Meet, and recorded sessions are provided for revision.'
+        q: 'Is this a group class or 1:1?',
+        a: 'This is a group class, conducted live online via Google Meet.'
       },
       {
-        q: 'What are the class timings?',
-        a: 'Class timings are shared upon registration, with multiple batches designed to fit different schedules.'
+        q: 'Will I need to make my own notes?',
+        a: 'Yes — instead of being given ready-made notes, you\'ll build your own as the course progresses. This is intentional: writing it in your own words helps the lessons truly settle in your heart, and your notes become your personal guide for the final exam.'
+      },
+      {
+        q: 'Will there be any quizzes along the way?',
+        a: 'Yes — weekly quizzes are part of the course to help reinforce what you\'ve learned and keep your progress on track, alongside the final exam.'
+      },
+      {
+        q: 'Is there an exam?',
+        a: 'Yes, there is a final exam at the end of the course based on what you\'ve learned and noted throughout.'
+      },
+      {
+        q: 'Will I get a certificate?',
+        a: 'Yes — you\'ll receive a certificate upon completing the course.'
       }
     ],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBAzH2MyDkOk8dq0UBwrKuPzqvPHnwa46zvWqfjbtbkmq9VTUQdpdYxmr7wtbzeOZvWUEqkoLCX70FMl5E4GoHkfRkFFJuEawhCzk8HkbvZue7fFWzaY-Tjqp48NbQ7MyT4IeBy_bwfqWNiyzjh3Z0Dhit62Ug646Ma3m-UIUbwH0LrYRYJfiTEY_xqoTRubv3oGJOeGMRF3Cm0Oh-El4_fBa4bXBfOSSFp2qXJhgNeVWE85NvzRVI_xQ'
+    image: quranRehalImg
   },
   {
     slug: 'tajweed-1-1',
@@ -171,54 +189,63 @@ export const coursesData: Course[] = [
     badge: '🔥 Popular',
     hook: 'Your complete foundation in Deen.',
     sub: 'A structured, six-month journey covering everything from correcting your recitation to understanding your beliefs — so you don\'t just follow Islam, you understand it, live it, and feel closer to Allah.',
+    description: `This is Qalbiya's most complete beginner-to-strong-foundation course — built for the woman who wants to stop learning her deen in scattered pieces and finally learn it as one connected whole.`,
     duration: '6 Months',
     price: 'Rs. 499',
-    priceDetail: 'per month',
+    priceDetail: 'month',
     syllabus: [
-      'Makhraj & Foundational Tajweed',
-      'Hifz-e-Hadith (Memorization and explanation of crucial Hadiths)',
-      'Daily Duas & Sunnah (Integrating Prophet\'s practices into routine)',
-      'Aqaid (Clarifying fundamental Islamic beliefs and creed)',
-      'Akhlaq & Tarbiyah (Character development based on Seerah)',
-      'Namaz & Masail (Fiqh of purification and daily prayers)',
-      'Asma-ul-Husna (Diving deep into Allah\'s Beautiful Names)'
+      'Makhraj (correct pronunciation points)',
+      'Basic Tajweed',
+      'Hifz-e-Hadith',
+      'Daily Duas & Sunnah',
+      'Aqaid (core beliefs)',
+      'Akhlaq',
+      'Namaz & Masail',
+      'Asma-ul-Husna'
     ],
     whatYouGet: [
-      '📚 Comprehensive lecture notes for each module',
-      '🧠 Weekly reflective quizzes to reinforce understanding',
-      '📅 Monthly self-assessments & progress reviews',
-      '💬 Dedicated direct WhatsApp support line',
-      '🎓 Foundation Pre-Diploma Certificate'
+      '📚 Notes provided for key topics, plus your own notes for personal reflection and retention',
+      '🧠 Weekly quizzes to reinforce your learning',
+      '📅 Monthly test at the end of every month to track your progress',
+      '📝 Final exam at the end of the course',
+      '💬 WhatsApp support outside class hours for questions and guidance',
+      '🎓 Certificate on completion'
     ],
     outcome: 'This course builds your foundation in Deen — helping you correct your recitation, understand your beliefs, and practice Islam with clarity in daily life. By the end, you won\'t just follow Islam — you\'ll understand it, live it, and feel closer to Allah.',
     courseDetails: {
-      'Format': 'Group Interactive Sessions or Personal (1-on-1)',
+      'Format': 'Group or Personal (1-on-1) — your choice',
       'Platform': 'Google Meet',
-      'Duration': '6 Months',
-      'Group Fee': 'Rs. 499/month',
-      'Personal Fee': 'Rs. 699/month'
+      'Duration': '6 months',
+      'Fee (Group)': 'Rs. 499/month',
+      'Fee (Personal/1:1)': 'Rs. 699/month'
     },
-    teacherNote: 'This course exists for the woman I once was — someone who wanted to actually understand her deen, not just perform its daily rituals without feeling their spiritual weight.',
+    teacherNote: 'This course exists for the woman I once was — someone who wanted to actually understand her deen, not just perform it. If that\'s you, I built this for exactly that reason.\n\n— Mustara, Founder of Qalbiya Institute',
     whoThisIsFor: [
-      'Sisters tired of learning their deen in scattered fragments and wanting a structured, cohesive path',
-      'Sisters wanting to ground their purification, prayers, and beliefs in authentic knowledge',
-      'Busy mothers or professionals looking to bring real sacred routine back into their weekly lives'
+      'For every beginner who\'s ready to stop learning her deen in fragments — and finally build one solid, lasting foundation.'
     ],
     faqs: [
       {
-        q: 'Do I need prior Arabic reading skills?',
-        a: 'We recommend being able to read basic Arabic script, as we will be reciting daily Duas and short verses, though we support beginners fully.'
+        q: 'Do I need any prior knowledge to join?',
+        a: 'No — this course is designed for beginners and takes you from the basics all the way to a strong, complete foundation.'
       },
       {
-        q: 'What is the main difference between the Group and Personal paths?',
-        a: 'The Group path provides a beautiful sisterhood environment. The Personal path allows a dedicated teacher to work 1-on-1 with you, adapting the schedule completely to your lifestyle.'
+        q: 'What\'s the difference between the group and personal option?',
+        a: 'Both cover the same complete syllabus. The personal (1-on-1) option gives you individual attention and a schedule built around you, while the group option follows a set class schedule with other students, at a lower monthly fee.'
       },
       {
-        q: 'Is there an exam at the end?',
-        a: 'Yes, we conduct a gentle written and oral assessment at the end of the 6 months to celebrate your growth and award your Pre-Diploma.'
+        q: 'Will I need to make my own notes?',
+        a: 'You\'ll receive notes for key topics, and you\'ll also build some of your own along the way — this combination helps the lessons truly settle in, while still giving you a reliable reference to fall back on.'
+      },
+      {
+        q: 'Are there quizzes or exams?',
+        a: 'Yes — weekly quizzes throughout the course, a monthly test at the end of every month to track your progress, and a final exam at the end.'
+      },
+      {
+        q: 'Will I get a certificate?',
+        a: 'Yes — you\'ll receive a certificate upon completing the course.'
       }
     ],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAZ4AZFGHPfRj3bvrVlQjEOOIWYWF0u9yt033-ziQ48JYRQ1g5yUemA3gFJL4MpDQmYmtkRXcr1tziZ2Ozu-I5Q7O7_1XxHyXcSydsBXqHNJg1iLBhdsRqSF9LQ1GXF6IQ53JzP8OC00leMJM60jasgaRCNxV2WStwsucq7feQxU1kOrekZ_7GLUR3PGz3vQldq5A2H2A4QJsyIoZkDzrdbu6OQWClXZKl9r2DAefMob4lTkpZjDiMfBQ'
+    image: sacredLearningImg
   },
   {
     slug: 'juniors-deeniyat-mastercourse',

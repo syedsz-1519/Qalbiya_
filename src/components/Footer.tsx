@@ -119,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
                 <img 
                   src={logoImg} 
                   alt="Qalbiya Logo" 
-                  className="h-full w-full object-cover scale-[1.08] mix-blend-multiply"
+                  className="h-full w-full object-contain mix-blend-multiply"
                 />
               </div>
             </div>

@@ -59,12 +59,14 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
           </p>
 
           {/* Core Outcomes */}
-          <div className="p-6 rounded-2xl border border-brand-border bg-panel-dark/40 space-y-3">
-            <h3 className="serif-heading text-base font-bold text-text-cream">The Sacred Outcome</h3>
-            <p className="text-xs leading-relaxed text-text-sage">
-              {course.outcome}
-            </p>
-          </div>
+          {course.slug !== 'seerah-course' && course.slug !== 'pre-diploma-deeniyat' && (
+            <div className="p-6 rounded-2xl border border-brand-border bg-panel-dark/40 space-y-3">
+              <h3 className="serif-heading text-base font-bold text-text-cream">The Sacred Outcome</h3>
+              <p className="text-xs leading-relaxed text-text-sage">
+                {course.outcome}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Right image framing */}
@@ -87,6 +89,18 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
         
         {/* Left Column: Syllabus, What is included, Who it is for */}
         <div className="lg:col-span-7 space-y-12">
+          
+          {/* Section 2: What This Course Covers */}
+          {course.description && (
+            <div className="space-y-4">
+              <h2 className="serif-heading text-2xl font-bold text-text-cream border-b border-brand-border pb-3">
+                What This Course Covers
+              </h2>
+              <p className="text-sm leading-relaxed text-text-sage whitespace-pre-line">
+                {course.description}
+              </p>
+            </div>
+          )}
           
           {/* Syllabus/Curriculum */}
           <div className="space-y-6">
@@ -118,6 +132,19 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
               ))}
             </div>
           </div>
+
+          {/* Section 4: The Outcome (specifically styled for Seerah & Deeniyat courses) */}
+          {(course.slug === 'seerah-course' || course.slug === 'pre-diploma-deeniyat') && (
+            <div className="p-8 rounded-3xl border border-brand-border bg-panel-light text-text-cream space-y-4 shadow-sm relative overflow-hidden">
+              <span className="text-[10px] font-bold text-accent-gold uppercase tracking-widest">The Outcome</span>
+              <p className="serif-heading text-lg sm:text-xl font-medium leading-relaxed italic relative z-10">
+                "{course.outcome}"
+              </p>
+              <div className="absolute right-4 bottom-2 text-accent-gold/5 pointer-events-none font-serif text-8xl sm:text-9xl leading-none select-none uppercase font-bold">
+                {course.slug === 'seerah-course' ? 'Akhlaq' : 'Deen'}
+              </div>
+            </div>
+          )}
 
           {/* Who is this for */}
           <div className="space-y-6">
@@ -197,7 +224,7 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
           {/* Founder Quote */}
           <div className="p-5 rounded-2xl border border-brand-border bg-panel-dark/50 italic text-xs leading-relaxed text-text-sage space-y-2">
             <p className="text-[10px] font-bold text-accent-gold uppercase tracking-widest not-italic">Sister Mustara's Note</p>
-            <p>"{course.teacherNote}"</p>
+            <p className="whitespace-pre-line">"{course.teacherNote}"</p>
           </div>
 
           {/* FAQ Block */}
