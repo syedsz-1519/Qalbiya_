@@ -73,7 +73,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onSelect }) => {
         <div className="mt-auto pt-2 flex items-center justify-between">
           <button
             onClick={() => onSelect(course.slug)}
-            className="inline-flex items-center space-x-1.5 text-xs font-semibold uppercase tracking-wider text-accent-gold hover:text-accent-gold-light group/btn transition-colors duration-300"
+            className="inline-flex items-center space-x-1.5 text-xs font-semibold uppercase tracking-wider text-accent-gold hover:text-accent-gold-light group/btn transition-colors duration-300 min-h-[44px] md:min-h-0 py-2.5 md:py-1"
             id={`course-card-details-btn-${course.slug}`}
           >
             <span>Read Sacred Overview</span>
@@ -84,7 +84,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onSelect }) => {
             href={`https://wa.me/918145363290?text=Assalamu%20Alaikum%20Sister%20Mustara%2C%20I%20am%20sincerely%20interested%20in%20registering%20for%20the%20${encodeURIComponent(course.title)}.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-9 items-center justify-center rounded-xl bg-accent-sage/20 border border-accent-sage/30 px-3.5 text-xs font-semibold text-text-cream transition-all duration-300 hover:bg-emerald-500 hover:text-bg-deep hover:border-emerald-500"
+            className="inline-flex h-11 md:h-9 items-center justify-center rounded-xl bg-accent-sage/20 border border-accent-sage/30 px-3.5 text-xs font-semibold text-text-cream transition-all duration-300 hover:bg-emerald-500 hover:text-bg-deep hover:border-emerald-500"
             id={`course-card-wa-btn-${course.slug}`}
           >
             Register

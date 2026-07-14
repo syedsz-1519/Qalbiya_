@@ -40,25 +40,25 @@ export const ContactPage: React.FC = () => {
             href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Sister%20Mustara%2C%20I%20have%20a%20question%20regarding%20Qalbiya%20Islamic%20Institute."
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 p-6 rounded-2xl border border-emerald-500/10 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300 text-text-cream"
+            className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-emerald-500/40 transition-all duration-300 text-text-cream"
             id="contact-whatsapp-block"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:scale-110 transition-transform">
-              <MessageSquare className="w-6 h-6 fill-current text-emerald-400" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-700 group-hover:scale-110 transition-transform">
+              <MessageSquare className="w-6 h-6 fill-current text-emerald-600" />
             </div>
             <div className="space-y-1.5 flex-1">
               <div className="flex items-center justify-center sm:justify-between gap-2">
-                <h3 className="font-semibold text-lg text-text-cream group-hover:text-emerald-400 transition-colors">
+                <h3 className="font-semibold text-lg text-text-cream group-hover:text-emerald-700 transition-colors">
                   WhatsApp Support
                 </h3>
-                <span className="hidden sm:inline-block text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                <span className="hidden sm:inline-block text-[11px] font-bold text-emerald-700 bg-emerald-500/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   Active
                 </span>
               </div>
               <p className="text-sm text-text-sage">
                 Connect directly for batch enrollments, 1-on-1 programs, and general student support.
               </p>
-              <div className="pt-1 font-mono text-xs text-emerald-400 font-medium">
+              <div className="pt-1 font-mono text-sm text-emerald-700 font-bold">
                 +91 81453 63290
               </div>
             </div>
@@ -69,25 +69,25 @@ export const ContactPage: React.FC = () => {
             href="https://instagram.com/qalbiya_institute"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 p-6 rounded-2xl border border-brand-border bg-panel-dark/40 hover:bg-panel-light/30 hover:border-pink-500/30 transition-all duration-300 text-text-cream"
+            className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 p-6 rounded-2xl border border-brand-border bg-panel-dark/40 hover:bg-panel-light/60 hover:border-pink-500/40 transition-all duration-300 text-text-cream"
             id="contact-instagram-block"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-pink-500/10 text-pink-400 group-hover:scale-110 transition-transform">
-              <Instagram className="w-6 h-6" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-pink-500/10 text-pink-700 group-hover:scale-110 transition-transform">
+              <Instagram className="w-6 h-6 text-pink-600" />
             </div>
             <div className="space-y-1.5 flex-1">
               <div className="flex items-center justify-center sm:justify-between gap-2">
-                <h3 className="font-semibold text-lg text-text-cream group-hover:text-pink-400 transition-colors">
+                <h3 className="font-semibold text-lg text-text-cream group-hover:text-pink-700 transition-colors">
                   DM on Instagram
                 </h3>
-                <span className="hidden sm:inline-block text-[11px] font-semibold text-pink-400 bg-pink-500/10 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                <span className="hidden sm:inline-block text-[11px] font-bold text-pink-700 bg-pink-500/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   Updates
                 </span>
               </div>
               <p className="text-sm text-text-sage">
                 Follow our handle, browse our course announcements, and send us a direct message anytime.
               </p>
-              <div className="pt-1 font-mono text-xs text-pink-400 font-medium">
+              <div className="pt-1 font-mono text-sm text-pink-700 font-bold">
                 @qalbiya_institute
               </div>
             </div>

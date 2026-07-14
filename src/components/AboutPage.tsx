@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, Compass, Sparkles, BookOpen, Quote, ShieldAlert } from 'lucide-react';
+import studyCompanionship from '../assets/images/study_companionship_1784048738488.jpg';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -44,8 +45,8 @@ export const AboutPage: React.FC = () => {
         <div className="lg:col-span-5 flex justify-center">
           <div className="relative w-full max-w-sm aspect-[3/4] rounded-3xl overflow-hidden border border-brand-border bg-panel-dark shadow-2xl">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfQXR5VRk4c4fgGh0r1tBuy4JveWA1HgFYVHOfT3rEkE3Y97dfwyfdn0y4xCXtQ4QQmZFolaMTZMiob2V0BQqL2xlY_6rClgxQk-Ot4a3hJPVF9OcLrbAc1vbwl5cMlwS-VsP4tznx8aYth8yo6yRVGr-x6UkiASfPhPqwTzY-0VZc_dpJaACX5unQvfmBSSd1KJVLLVJK5_szsYVW5ZtHkECtj_Svaj4tVXvtxr5cJtjOa6P93Opx7A"
-              alt="Authentic Quran reading setting"
+              src={studyCompanionship}
+              alt="Cozy sisters interactive online learning setup showing a mobile phone with Arabic studies"
               referrerPolicy="no-referrer"
               className="h-full w-full object-cover filter brightness-90 saturate-[0.8]"
             />

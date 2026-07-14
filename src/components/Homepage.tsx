@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Heart, Users, ArrowRight, Quote, ChevronLeft, ChevronRight, BookOpen, Compass, Calendar } from 'lucide-react';
 import { Course, Route } from '../types';
-import onlineLearningSetup from '../assets/images/online_learning_setup_1784025332504.jpg';
+import onlineLearningSetup from '../assets/images/tablet_online_class_1784047721074.jpg';
+import womensOnlineStudy from '../assets/images/womens_online_study_1784048690815.jpg';
+import kidsOnlineStudy from '../assets/images/kids_online_study_1784047721074.jpg'; // fallback to existing tablet image if any, but we'll use kids_online_study_1784048706942.jpg
+import kidsOnlineStudyGen from '../assets/images/kids_online_study_1784048706942.jpg';
+import founderWorkspace from '../assets/images/founder_workspace_1784048720294.jpg';
 
 interface HomepageProps {
   courses: Course[];
@@ -152,8 +156,8 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
               {/* Card Image */}
               <div className="w-full h-48 rounded-2xl overflow-hidden relative border border-[#EAD5D8]">
                 <img 
-                  src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600" 
-                  alt="Reading and studying sacred texts" 
+                  src={womensOnlineStudy} 
+                  alt="Women studying online via laptop" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -190,8 +194,8 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
               {/* Card Image */}
               <div className="w-full h-48 rounded-2xl overflow-hidden relative border border-[#EAD5D8]">
                 <img 
-                  src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&q=80&w=600" 
-                  alt="Young learner enjoying stories" 
+                  src={kidsOnlineStudyGen} 
+                  alt="Young learner with online tablet class" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -238,7 +242,17 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-left max-w-5xl mx-auto">
             {testimonies.map((testimony, idx) => (
-              <div key={idx} className="bg-white/90 border border-[#EAD5D8]/70 rounded-xl p-5 relative space-y-4">
+              <motion.div
+                key={idx}
+                whileHover={{ 
+                  y: -6, 
+                  scale: 1.02, 
+                  boxShadow: "0 12px 30px -10px rgba(142, 75, 89, 0.15)",
+                  borderColor: "#D0B2B7"
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="bg-white/90 border border-[#EAD5D8]/70 rounded-xl p-5 relative space-y-4 transition-all duration-300"
+              >
                 <Quote className="absolute top-4 right-4 w-5 h-5 text-[#8E4B59]/10" />
                 <p className="text-xs italic text-[#5C464A] leading-relaxed relative z-10">
                   "{testimony.text}"
@@ -247,7 +261,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
                   <span className="text-[10px] font-bold text-[#2E1F21]">{testimony.author}</span>
                   <span className="text-[9px] font-bold text-[#8E4B59] uppercase tracking-wider">{testimony.course}</span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -278,7 +292,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as 'all' | 'women' | 'kids')}
-                className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-3.5 sm:py-2.5 min-h-[44px] flex items-center justify-center rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 ${
                   activeTab === tab.id
                     ? 'bg-[#8E4B59] text-white shadow-sm'
                     : 'text-[#5C464A] hover:bg-[#FFF5F6] hover:text-[#8E4B59]'
@@ -369,7 +383,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
                             onSelectCourse(course.slug);
                             onNavigate('course-detail');
                           }}
-                          className="inline-flex items-center space-x-1 px-4 py-2.5 rounded-xl bg-[#8E4B59] text-white text-xs font-bold tracking-wider uppercase hover:bg-[#743C47] transition-all duration-300 shadow-sm"
+                          className="inline-flex items-center justify-center space-x-1 px-5 sm:px-4 h-11 sm:h-9 rounded-xl bg-[#8E4B59] text-white text-xs font-bold tracking-wider uppercase hover:bg-[#743C47] transition-all duration-300 shadow-sm"
                           id={`featured-details-btn-${course.slug}`}
                         >
                           <span>Details</span>
@@ -393,8 +407,8 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
           <div className="lg:col-span-5 flex flex-col items-center">
             <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border border-[#EAD5D8] shadow-md bg-[#FAF0F2]">
               <img
-                src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&q=80&w=600"
-                alt="About Our Founder"
+                src={founderWorkspace}
+                alt="About Our Founder - Interactive workspace with laptop online teaching setup"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover filter brightness-95 saturate-[0.8]"
               />

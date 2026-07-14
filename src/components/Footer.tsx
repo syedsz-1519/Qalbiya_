@@ -102,55 +102,55 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
 
 
 
-  // Original Dark-Themed Footer fallback
+  // Redesigned premium high-contrast footer styled consistently against the '--color-bg-deep' background (#FDF2F4)
   return (
-    <footer className="w-full bg-panel-dark border-t border-brand-border py-16 transition-all duration-300">
+    <footer className="w-full bg-[var(--color-bg-deep)] text-[#2E1F21] border-t border-[#EAD5D8] py-16 transition-all duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           
           {/* Logo & Vision Block */}
           <div className="md:col-span-4 space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-accent-gold/20 bg-bg-deep text-accent-gold text-lg font-bold">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#EAD5D8] bg-white text-[#8E4B59] text-lg font-bold shadow-sm">
                 ق
               </div>
               <div>
-                <h3 className="serif-heading text-lg font-bold tracking-wide text-text-cream">
+                <h3 className="serif-heading text-lg font-bold tracking-wide text-[#2E1F21]">
                   QALBIYA
                 </h3>
-                <p className="text-[10px] font-medium tracking-widest text-accent-gold uppercase">
+                <p className="text-[10px] font-bold tracking-widest text-[#8E4B59] uppercase">
                   Islamic Institute
                 </p>
               </div>
             </div>
             
-            <p className="text-sm leading-relaxed text-text-sage">
+            <p className="text-sm leading-relaxed text-[#5C464A]">
               "Allah does not look at your appearances or your wealth, but He looks at your hearts and your deeds."
-              <span className="block mt-2 text-xs italic font-semibold text-accent-gold/80">— Prophet Muhammad ﷺ</span>
+              <span className="block mt-2 text-xs italic font-bold text-[#743C47]">— Prophet Muhammad ﷺ</span>
             </p>
 
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-accent-gold">Primary Connections</h4>
-              <div className="flex flex-col space-y-2 text-sm text-text-sage">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#743C47]">Primary Connections</h4>
+              <div className="flex flex-col space-y-2.5 text-sm text-[#5C464A]">
                 <a 
                   href="https://wa.me/918145363290" 
-                  className="flex items-center space-x-2.5 hover:text-accent-gold transition-colors duration-300"
+                  className="flex items-center space-x-2.5 text-emerald-800 hover:text-[#8E4B59] transition-colors duration-300 font-bold"
                   target="_blank"
                   rel="noopener noreferrer"
                   id="footer-link-whatsapp"
                 >
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span>WhatsApp Sister Mustara</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse shrink-0"></span>
+                  <span className="underline decoration-emerald-800/30 hover:decoration-current">WhatsApp Sister Mustara</span>
                 </a>
                 <a 
                   href="https://instagram.com/qalbiya_institute" 
-                  className="flex items-center space-x-2.5 hover:text-accent-gold transition-colors duration-300"
+                  className="flex items-center space-x-2.5 text-[#5C464A] hover:text-[#8E4B59] transition-colors duration-300 font-bold"
                   target="_blank"
                   rel="noopener noreferrer"
                   id="footer-link-instagram"
                 >
-                  <Instagram className="w-4 h-4 text-pink-500" />
-                  <span>@qalbiya_institute (Instagram DM)</span>
+                  <Instagram className="w-4 h-4 text-[#8E4B59] shrink-0" />
+                  <span className="underline decoration-[#8E4B59]/30 hover:decoration-current">@qalbiya_institute (Instagram DM)</span>
                 </a>
               </div>
             </div>
@@ -158,12 +158,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
 
           {/* Quick Links Column */}
           <div className="md:col-span-2 space-y-5">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-accent-gold">Programs</h4>
-            <ul className="space-y-2.5 text-sm">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#743C47]">Programs</h4>
+            <ul className="space-y-1.5 md:space-y-2.5 text-sm">
               <li>
                 <button 
                   onClick={() => onNavigate('women')} 
-                  className="text-text-sage hover:text-text-cream hover:underline text-left transition-colors duration-300"
+                  className="text-[#5C464A] hover:text-[#8E4B59] hover:underline text-left transition-colors duration-300 font-bold py-2.5 md:py-0.5 block w-full"
                   id="footer-btn-women"
                 >
                   Women's Academic Hub
@@ -172,7 +172,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
               <li>
                 <button 
                   onClick={() => onNavigate('kids')} 
-                  className="text-text-sage hover:text-text-cream hover:underline text-left transition-colors duration-300"
+                  className="text-[#5C464A] hover:text-[#8E4B59] hover:underline text-left transition-colors duration-300 font-bold py-2.5 md:py-0.5 block w-full"
                   id="footer-btn-kids"
                 >
                   Kids' Tarbiyah Classes
@@ -181,7 +181,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
               <li>
                 <button 
                   onClick={() => onNavigate('free-courses')} 
-                  className="text-text-sage hover:text-text-cream hover:underline text-left transition-colors duration-300"
+                  className="text-[#5C464A] hover:text-[#8E4B59] hover:underline text-left transition-colors duration-300 font-bold py-2.5 md:py-0.5 block w-full"
                   id="footer-btn-free"
                 >
                   Free Sacred Lessons
@@ -190,7 +190,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
               <li>
                 <button 
                   onClick={() => onNavigate('scholarship')} 
-                  className="text-text-sage hover:text-text-cream hover:underline text-left transition-colors duration-300"
+                  className="text-[#5C464A] hover:text-[#8E4B59] hover:underline text-left transition-colors duration-300 font-bold py-2.5 md:py-0.5 block w-full"
                   id="footer-btn-scholarship"
                 >
                   Sponsor a Student
@@ -201,12 +201,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
 
           {/* Trust & Legal Column */}
           <div className="md:col-span-2 space-y-5">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-accent-gold">Trust & Legal</h4>
-            <ul className="space-y-2.5 text-sm">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#743C47]">Trust & Legal</h4>
+            <ul className="space-y-1.5 md:space-y-2.5 text-sm">
               <li>
                 <button 
                   onClick={() => onNavigate('refund-policy')} 
-                  className="text-text-sage hover:text-text-cream hover:underline text-left transition-colors duration-300"
+                  className="text-[#5C464A] hover:text-[#8E4B59] hover:underline text-left transition-colors duration-300 font-bold py-2.5 md:py-0.5 block w-full"
                   id="footer-btn-refund-policy"
                 >
                   Refund Policy
@@ -215,7 +215,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
               <li>
                 <button 
                   onClick={() => onNavigate('terms-and-conditions')} 
-                  className="text-text-sage hover:text-text-cream hover:underline text-left transition-colors duration-300"
+                  className="text-[#5C464A] hover:text-[#8E4B59] hover:underline text-left transition-colors duration-300 font-bold py-2.5 md:py-0.5 block w-full"
                   id="footer-btn-terms-and-conditions"
                 >
                   Terms & Conditions
@@ -224,7 +224,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
               <li>
                 <button 
                   onClick={() => onNavigate('privacy-policy')} 
-                  className="text-text-sage hover:text-text-cream hover:underline text-left transition-colors duration-300"
+                  className="text-[#5C464A] hover:text-[#8E4B59] hover:underline text-left transition-colors duration-300 font-bold py-2.5 md:py-0.5 block w-full"
                   id="footer-btn-privacy-policy"
                 >
                   Privacy Policy
@@ -233,7 +233,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
               <li>
                 <button 
                   onClick={() => onNavigate('faq')} 
-                  className="text-text-sage hover:text-text-cream hover:underline text-left transition-colors duration-300"
+                  className="text-[#5C464A] hover:text-[#8E4B59] hover:underline text-left transition-colors duration-300 font-bold py-2.5 md:py-0.5 block w-full"
                   id="footer-btn-faq"
                 >
                   General FAQ
@@ -245,8 +245,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
           {/* Interactive Block: Fast Note & Newsletter */}
           <div className="md:col-span-4 space-y-6">
             <div className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-widest text-accent-gold">Drop Sister Mustara a Reflection</h4>
-              <p className="text-xs text-text-sage">Have questions or simply want to send du'as? Leave your note below.</p>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#743C47]">Drop Sister Mustara a Reflection</h4>
+              <p className="text-xs text-[#5C464A]">Have questions or simply want to send du'as? Leave your note below.</p>
               
               <form onSubmit={handleMessageSubmit} className="space-y-2" id="footer-message-form">
                 <div className="relative">
@@ -256,25 +256,25 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
                     placeholder={isSending ? "Sending message..." : "Your message, question, or du'a..."}
                     rows={2}
                     disabled={isSending}
-                    className="w-full rounded-xl border border-brand-border bg-bg-deep px-3.5 py-2.5 text-sm text-text-cream placeholder-text-sage/50 focus:border-accent-gold focus:outline-none focus:ring-1 focus:ring-accent-gold/20 resize-none transition-all duration-300 disabled:opacity-60"
+                    className="w-full rounded-xl border border-[#EAD5D8] bg-white px-3.5 py-2.5 text-sm text-[#2E1F21] placeholder-[#5C464A]/60 focus:border-[#8E4B59] focus:outline-none focus:ring-1 focus:ring-[#8E4B59]/20 resize-none transition-all duration-300 disabled:opacity-60 shadow-sm"
                     id="footer-message-input"
                   />
                   <button
                     type="submit"
                     disabled={isSending || !quickMessage.trim()}
-                    className="absolute bottom-2.5 right-2.5 flex h-7 w-7 items-center justify-center rounded-lg bg-accent-gold text-bg-deep hover:bg-accent-gold-light transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="absolute bottom-2.5 right-2.5 flex h-8 w-8 items-center justify-center rounded-lg bg-[#8E4B59] text-white hover:bg-[#743C47] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-sm"
                     aria-label="Send message"
                     id="footer-message-submit"
                   >
                     {isSending ? (
-                      <span className="w-3 h-3 border-2 border-bg-deep border-t-transparent rounded-full animate-spin" />
+                      <span className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />
                     ) : (
                       <Send className="w-3.5 h-3.5" />
                     )}
                   </button>
                 </div>
                 {messageSent && submitStatus && (
-                  <p className="text-xs font-medium animate-pulse" style={{ color: submitStatus.startsWith('❌') ? '#f87171' : '#10b981' }} id="footer-message-success">
+                  <p className="text-xs font-bold animate-pulse text-emerald-800" id="footer-message-success">
                     {submitStatus}
                   </p>
                 )}
@@ -282,8 +282,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
             </div>
 
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-bold uppercase tracking-widest text-accent-gold">Sacred Newsletter</h4>
-              <p className="text-xs text-text-sage">Get spiritually enriching reflections & course schedules once a month.</p>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#743C47]">Sacred Newsletter</h4>
+              <p className="text-xs text-[#5C464A]">Get spiritually enriching reflections & course schedules once a month.</p>
               
               <form onSubmit={handleNewsletterSubmit} className="flex gap-2" id="footer-newsletter-form">
                 <input
@@ -292,19 +292,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   placeholder="your.email@example.com"
-                  className="flex-1 rounded-xl border border-brand-border bg-bg-deep px-3.5 py-2 text-sm text-text-cream placeholder-text-sage/50 focus:border-accent-gold focus:outline-none focus:ring-1 focus:ring-accent-gold/20 transition-all duration-300"
+                  className="flex-1 rounded-xl border border-[#EAD5D8] bg-white px-3.5 py-2 text-sm text-[#2E1F21] placeholder-[#5C464A]/60 focus:border-[#8E4B59] focus:outline-none focus:ring-1 focus:ring-[#8E4B59]/20 transition-all duration-300 min-h-[44px] md:min-h-0 shadow-sm"
                   id="footer-newsletter-input"
                 />
                 <button
                   type="submit"
-                  className="rounded-xl bg-accent-sage hover:bg-accent-sage/80 text-text-cream border border-accent-sage/20 px-4 py-2 text-xs font-semibold tracking-wider uppercase transition-all duration-300"
+                  className="rounded-xl bg-[#8E4B59] hover:bg-[#743C47] text-white border border-transparent px-4 py-2 text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer min-h-[44px] md:min-h-0 flex items-center justify-center shadow-sm"
                   id="footer-newsletter-submit"
                 >
                   Subscribe
                 </button>
               </form>
               {isSubscribed && (
-                <p className="text-xs text-emerald-500 font-medium animate-pulse" id="footer-newsletter-success">
+                <p className="text-xs text-emerald-800 font-semibold animate-pulse" id="footer-newsletter-success">
                   ✓ Successfully subscribed with respect. Welcome!
                 </p>
               )}
@@ -314,22 +314,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
         </div>
 
         {/* Closing Row */}
-        <div className="mt-16 pt-8 border-t border-brand-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-sage">
+        <div className="mt-16 pt-8 border-t border-[#EAD5D8] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#5C464A]">
           <div className="flex items-center space-x-1.5">
-            <Compass className="w-4 h-4 text-accent-gold/60" />
+            <Compass className="w-4 h-4 text-[#8E4B59]" />
             <span>Serving Seekers Globally &bull; Conducted over Google Meet</span>
           </div>
           <div className="flex items-center space-x-4 flex-wrap justify-center sm:justify-end gap-y-2">
             <div className="flex items-center space-x-1">
               <span>Made with deep respect &bull; Focus on the heart</span>
-              <Heart className="w-3.5 h-3.5 text-rose-500 inline fill-rose-500 animate-pulse" />
+              <Heart className="w-3.5 h-3.5 text-rose-600 inline fill-rose-600 animate-pulse" />
             </div>
-            <span className="hidden sm:inline text-text-sage/40">&bull;</span>
+            <span className="hidden sm:inline text-[#EAD5D8]">&bull;</span>
             <a 
               href="https://www.linkedin.com/in/syed-shahnawaz2027" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-accent-gold transition-colors duration-300 font-medium underline decoration-accent-gold/30 hover:decoration-accent-gold cursor-pointer"
+              className="text-[#8E4B59] hover:text-[#2E1F21] font-bold transition-colors duration-300 underline decoration-[#8E4B59]/30 hover:decoration-current cursor-pointer"
               id="developer-link-regular"
             >
               Developed by SyedShahnawaz

@@ -48,7 +48,7 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
           <div className="pt-4">
             <button
               onClick={scrollToCourses}
-              className="bg-accent-gold hover:bg-accent-gold-dark text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3 rounded-full inline-flex items-center space-x-2 shadow-sm hover:shadow transition-all duration-300 cursor-pointer"
+              className="bg-accent-gold hover:bg-accent-gold-dark text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3.5 sm:py-3 rounded-full inline-flex items-center space-x-2 shadow-sm hover:shadow transition-all duration-300 cursor-pointer"
               id="kids-hero-view-programs-btn"
             >
               <span>View Programs</span>
@@ -116,7 +116,7 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
                       e.stopPropagation();
                       onSelectCourse('juniors-deeniyat-mastercourse');
                     }}
-                    className="bg-accent-gold hover:bg-accent-gold-dark text-white text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm transition-all duration-300 cursor-pointer"
+                    className="bg-accent-gold hover:bg-accent-gold-dark text-white text-xs font-semibold px-5 py-3.5 sm:py-2.5 rounded-full shadow-sm transition-all duration-300 cursor-pointer"
                   >
                     Reserve Spot
                   </button>
@@ -372,7 +372,7 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
         <div className="flex justify-center gap-4 pt-4">
           <button
             onClick={() => onNavigate('kids')}
-            className="inline-flex items-center space-x-2 rounded-xl border border-brand-border bg-panel-dark px-4.5 py-2.5 text-xs font-bold uppercase tracking-wider text-text-cream hover:border-accent-gold/40 hover:bg-panel-light transition-all duration-300 cursor-pointer"
+            className="inline-flex items-center space-x-2 rounded-xl border border-brand-border bg-panel-dark px-4.5 py-3.5 sm:py-2.5 text-xs font-bold uppercase tracking-wider text-text-cream hover:border-accent-gold/40 hover:bg-panel-light transition-all duration-300 cursor-pointer"
             id="hub-toggle-btn"
           >
             <span>Switch to Kids' Tarbiyah Hub</span>
@@ -462,7 +462,7 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
           </p>
           <button
             onClick={() => onNavigate('scholarship')}
-            className="mt-4 rounded-xl border border-accent-gold/40 hover:bg-accent-gold text-accent-gold hover:text-bg-deep px-5 py-2.5 text-xs font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer"
+            className="mt-4 rounded-xl border border-accent-gold/40 hover:bg-accent-gold text-accent-gold hover:text-bg-deep px-5 py-3.5 sm:py-2.5 text-xs font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer"
             id="hub-scholarship-btn"
           >
             Apply for Sponsorship
