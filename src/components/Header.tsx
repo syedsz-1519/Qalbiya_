@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Sparkles, BookOpen, Heart, Info, FileText, Send, Mail } from 'lucide-react';
 import { Route } from '../types';
-import logoImg from '../assets/images/logo.jpg';
+import logoImg from '../assets/images/logo.png';
 
 interface HeaderProps {
   currentRoute: Route;

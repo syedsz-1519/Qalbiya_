@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Send, MessageSquare, Heart, Instagram, Compass, Mail } from 'lucide-react';
 import { Route } from '../types';
-import logoImg from '../assets/images/logo.jpg';
+import logoImg from '../assets/images/logo.png';
 
 interface FooterProps {
   onNavigate: (route: Route, courseSlug?: string) => void;
