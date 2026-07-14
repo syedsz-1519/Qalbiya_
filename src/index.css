@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Libre Caslon Text", Georgia, serif;
+  --font-sans: "DM Sans", "Inter", sans-serif;
+  --font-display: "Libre Caslon Text", serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg-deep: #FDF2F4;
+  --color-panel-dark: #FFFFFF;
+  --color-panel-light: #FAF0F2;
+  --color-accent-gold: #8E4B59;
+  --color-accent-gold-dark: #743C47;
+  --color-accent-gold-light: #FCEDF0;
+  --color-accent-sage: #A25B69;
+  --color-brand-border: #EAD5D8;
+  --color-text-cream: #2E1F21;
+  --color-text-sage: #5C464A;
+}
+
+body {
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-cream);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for beautiful warm styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FDF2F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #EAD5D8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8E4B59;
+}
+
+/* Elegant serif font style helper */
+.serif-heading {
+  font-family: var(--font-serif);
+}
