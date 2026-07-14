@@ -3,6 +3,7 @@ import quranRehalImg from './assets/images/quran_rehal_arched_window_17840168099
 import sacredLearningImg from './assets/images/sacred_learning_approach_1784016791330.jpg';
 import kidsStudyImg from './assets/images/kids_online_study_1784048706942.jpg';
 import onlineLearningImg from './assets/images/online_learning_tablet_1784039716228.jpg';
+import studyCompanionshipImg from './assets/images/study_companionship_1784048738488.jpg';
 
 export const coursesData: Course[] = [
   {
@@ -79,57 +80,79 @@ Every lesson is built to answer one question: how do I carry this into my own li
     category: 'women',
     title: 'Tajweed 1:1 Classes',
     badge: '🔥 Popular',
-    hook: 'Every ayah, focused solely on you.',
+    hook: 'Every ayah. Every correction. Focused solely on you.',
     sub: 'One-on-one Tajweed classes designed around your pace, your pronunciation, and your journey to reciting the Qur\'an with confidence and correctness.',
-    duration: '5 Months',
-    price: 'Rs. 800',
-    priceDetail: 'per month',
+    description: `Taught one-on-one, this program is designed entirely around your pace, your pronunciation, and your schedule. Move faster or slower, address specific recurring mistakes, and gain a recitation you feel truly proud of.`,
+    advantages: [
+      {
+        title: 'Dedicated Time, Just for You',
+        desc: 'Class timing built entirely around your schedule'
+      },
+      {
+        title: 'Personalized Correction',
+        desc: 'Every mistake, mispronunciation, and question addressed exclusively for you'
+      },
+      {
+        title: 'Your Pace, Your Way',
+        desc: 'Move faster or slower, whatever you need'
+      },
+      {
+        title: 'Weekly Progress Tracking',
+        desc: 'See exactly how you\'re improving, week by week'
+      }
+    ],
     syllabus: [
-      'Correct Makharij (Arabic articulation points)',
-      'Sifaat (Attributes of the letters)',
-      'Complete rules of Tajweed (basic to advanced)',
-      'Targeted correction of recurring individual pronunciation mistakes',
-      'Practical recitation guidance of selected Surahs'
+      'Correct Makharij (points of articulation)',
+      'Sifaat (characteristics of letters)',
+      'Complete Tajweed rules — basic to advanced',
+      'Ongoing correction of your personal recitation and recurring mistakes'
     ],
     whatYouGet: [
-      '📓 Personalized notes/PDFs tailored to your progress',
-      '📝 Custom personal mistake-tracking list',
-      '💬 Dedicated WhatsApp support for daily audio corrections',
-      '🎓 Course Completion Certificate'
+      '📄 Notes/PDFs for every lesson',
+      '📝 Personal mistake-tracking list (so you can see your own progress clearly)',
+      '💬 WhatsApp support outside class hours — including daily practice via voice messages and homework',
+      '🎓 Certificate on completion'
     ],
     outcome: 'By the end of this course, you\'ll recite the Qur\'an fluently, correctly, and with confidence — not guessing, not hesitating, but reciting the way it was meant to be recited.',
     courseDetails: {
-      'Format': '1-on-1 Personalized Session',
+      'Format': '1-on-1 (private), fully online',
       'Platform': 'Google Meet',
-      'Duration': '5 Months',
-      'Classes': '3 classes/week, 1hr each',
+      'Duration': '5 months',
+      'Classes': '3 per week, 1 hour each',
       'Fee': 'Rs. 800/month'
     },
-    teacherNote: 'I\'ve seen how much confidence a woman gains once her recitation finally feels right... and how that transforms her relationship with Allah\'s word.',
+    teacherNote: 'I\'ve seen how much confidence a woman gains once her recitation finally feels right — not rushed, not unsure, just correct. That\'s what I want for you in this class: not just knowledge of the rules, but a recitation you feel proud of.\n\n— Mustara, Founder of Qalbiya Islamic Institute',
     whoThisIsFor: [
-      'Sisters starting from scratch who want personalized, non-intimidating guidance',
-      'Sisters who have been reciting for years but want to refine long-standing pronunciation errors',
-      'Anyone looking to develop a slow, correct, beautiful recitation'
+      'Whether you\'re starting from scratch or want to refine mistakes you\'ve carried for years — if you\'re ready for focused, individual correction, this class is built for you.',
+      'Requirement note: No prior Tajweed knowledge needed — the only requirement is that you already know how to read the Qur\'an.'
     ],
     faqs: [
       {
-        q: 'What prior knowledge is required?',
-        a: 'The only requirement is already knowing how to recognize the basic Arabic letters. If you do not, our Noorani Qaida Course is the perfect place to start.'
+        q: 'Do I need any prior Tajweed knowledge?',
+        a: 'No — the only requirement is that you already know how to read the Qur\'an. This course starts from correcting your foundation and builds from there.'
       },
       {
-        q: 'What is the policy for missed classes?',
-        a: 'Since this is a 1-on-1 class, if you notify your teacher at least 4 hours in advance, we will reschedule the class at a mutually convenient time.'
+        q: 'What if I miss a class?',
+        a: 'Since this is a 1-on-1 class (not a group class), scheduling is flexible and built around you. If a specific class is missed, the topic planned for that day is simply covered in the next class — nothing is lost.'
       },
       {
-        q: 'How is the class timing decided?',
-        a: 'Timings are flexible. Upon enrollment, we match you with an instructor whose availability fits your preferred time slots.'
+        q: 'Is this online or in-person?',
+        a: 'Fully online, conducted via Google Meet.'
       },
       {
-        q: 'Is there a trial class available?',
-        a: 'Yes, we offer a free 1-on-1 assessment and trial class so you can experience our teaching method before committing.'
+        q: 'How is the class time decided?',
+        a: 'Class timing is set based on your schedule and availability.'
+      },
+      {
+        q: 'Will I get a certificate?',
+        a: 'Yes — you\'ll receive a certificate upon completing the course.'
+      },
+      {
+        q: 'Is a trial class available?',
+        a: 'Yes — a trial class is available before you commit, so you can experience the teaching style firsthand.'
       }
     ],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBfQXR5VRk4c4fgGh0r1tBuy4JveWA1HgFYVHOfT3rEkE3Y97dfwyfdn0y4xCXtQ4QQmZFolaMTZMiob2V0BQqL2xlY_6rClgxQk-Ot4a3hJPVF9OcLrbAc1vbwl5cMlwS-VsP4tznx8aYth8yo6yRVGr-x6UkiASfPhPqwTzY-0VZc_dpJaACX5unQvfmBSSd1KJVLLVJK5_szsYVW5ZtHkECtj_Svaj4tVXvtxr5cJtjOa6P93Opx7A'
+    image: studyCompanionshipImg
   },
   {
     slug: 'noorani-qaida',
