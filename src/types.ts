@@ -23,7 +23,6 @@ export interface Course {
   image: string;
   howLearn?: string; // Optional field for kids' programs
   age?: string; // Optional field for kids' programs
-  description?: string; // Optional field for detailed section description
 }
 
 export interface ScholarshipApplication {

@@ -92,7 +92,7 @@ export const ScholarshipPage: React.FC<ScholarshipPageProps> = ({ courses, initi
   const whatsappUrl = `https://wa.me/918145363290?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <div className="space-y-12 pb-12 max-w-4xl mx-auto px-4 sm:px-6">
+    <div className="space-y-16 pb-20 max-w-4xl mx-auto px-4 sm:px-6">
       
       {/* Intro Header */}
       <section className="text-center space-y-4 pt-10" id="scholarship-header">

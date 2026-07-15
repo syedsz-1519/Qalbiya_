@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Sparkles, BookOpen, Heart, Info, FileText, Send, Mail, ChevronDown } from 'lucide-react';
+import { Menu, X, Sparkles, BookOpen, Heart, Info, FileText, Send, Mail, Instagram } from 'lucide-react';
 import { Route } from '../types';
-import logoImg from '../assets/images/logo.png';
 
 interface HeaderProps {
   currentRoute: Route;
@@ -11,8 +10,6 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const isKids = currentRoute === 'kids';
 
   const handleNavClick = (route: Route) => {
@@ -51,6 +48,8 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
 
   const regularNavItems = [
     { label: 'Home', onClick: () => handleNavClick('home'), isActive: currentRoute === 'home', icon: Sparkles },
+    { label: "Women's Hub", onClick: () => handleNavClick('women'), isActive: currentRoute === 'women', icon: Heart },
+    { label: "Kids' Hub", onClick: () => handleNavClick('kids'), isActive: currentRoute === 'kids', icon: BookOpen },
     { label: 'Free Courses', onClick: () => handleNavClick('free-courses'), isActive: currentRoute === 'free-courses', icon: Send },
     { label: 'About', onClick: () => handleNavClick('about'), isActive: currentRoute === 'about', icon: Info },
     { label: 'Scholarship', onClick: () => handleNavClick('scholarship'), isActive: currentRoute === 'scholarship', icon: FileText },
@@ -73,13 +72,19 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                 Qalbiya
               </h1>
             ) : (
-              <div className="h-14 w-14 md:h-16 md:w-16 rounded-full overflow-hidden flex items-center justify-center bg-transparent transition-transform duration-300 group-hover:scale-105">
-                <img 
-                  src={logoImg} 
-                  alt="Qalbiya Logo" 
-                  className="h-full w-full object-contain mix-blend-multiply"
-                />
-              </div>
+              <>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-accent-gold/30 bg-panel-dark text-accent-gold shadow-md transition-all duration-300 group-hover:border-accent-gold group-hover:bg-panel-light">
+                  <span className="serif-heading text-xl font-bold">ق</span>
+                </div>
+                <div>
+                  <h1 className="serif-heading text-lg font-bold tracking-wide text-text-cream group-hover:text-accent-gold transition-colors duration-300">
+                    QALBIYA
+                  </h1>
+                  <p className="text-[10px] font-medium tracking-widest text-accent-gold uppercase">
+                    Islamic Institute
+                  </p>
+                </div>
+              </>
             )}
           </div>
 
@@ -108,115 +113,47 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                 </button>
               ))
             ) : (
-              <>
-                {/* Home Item */}
-                {(() => {
-                  const item = regularNavItems[0];
-                  const Icon = item.icon;
-                  const isActive = item.isActive;
-                  return (
-                    <button
-                      key={item.label}
-                      onClick={item.onClick}
-                      className={`relative flex items-center space-x-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
-                        isActive 
-                          ? 'text-accent-gold bg-panel-dark border border-accent-gold/20' 
-                          : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
-                      }`}
-                      id={`nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
-                    >
-                      <Icon className={`w-4 h-4 ${isActive ? 'text-accent-gold' : 'text-text-sage/70'}`} />
-                      <span>{item.label}</span>
-                      {isActive && (
-                        <motion.span 
-                          layoutId="activeNavIndicator" 
-                          className="absolute bottom-0 left-3 right-3 h-[2px] bg-accent-gold rounded-full"
-                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                        />
-                      )}
-                    </button>
-                  );
-                })()}
-
-                {/* Programs Dropdown */}
-                <div 
-                  className="relative"
-                  onMouseEnter={() => setIsDropdownOpen(true)}
-                  onMouseLeave={() => setIsDropdownOpen(false)}
-                >
+              regularNavItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = item.isActive;
+                return (
                   <button
+                    key={item.label}
+                    onClick={item.onClick}
                     className={`relative flex items-center space-x-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
-                      currentRoute === 'women' || currentRoute === 'kids'
+                      isActive 
                         ? 'text-accent-gold bg-panel-dark border border-accent-gold/20' 
                         : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
                     }`}
-                    id="nav-item-programs"
+                    id={`nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
                   >
-                    <BookOpen className={`w-4 h-4 ${currentRoute === 'women' || currentRoute === 'kids' ? 'text-accent-gold' : 'text-text-sage/70'}`} />
-                    <span>Programs</span>
-                    <ChevronDown className="w-3.5 h-3.5 opacity-70" />
-                  </button>
-
-                  <AnimatePresence>
-                    {isDropdownOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-full left-0 mt-1 w-48 rounded-xl border border-brand-border bg-panel-dark shadow-lg py-2 z-50 overflow-hidden"
-                      >
-                        <button
-                          onClick={() => { handleNavClick('women'); setIsDropdownOpen(false); }}
-                          className="flex w-full items-center px-4 py-2.5 text-sm text-text-sage hover:text-accent-gold hover:bg-panel-light/40 transition-colors cursor-pointer text-left font-medium"
-                        >
-                          <Heart className="w-4 h-4 mr-2 text-rose-400" />
-                          <span>Women's Programs</span>
-                        </button>
-                        <button
-                          onClick={() => { handleNavClick('kids'); setIsDropdownOpen(false); }}
-                          className="flex w-full items-center px-4 py-2.5 text-sm text-text-sage hover:text-accent-gold hover:bg-panel-light/40 transition-colors cursor-pointer text-left font-medium"
-                        >
-                          <BookOpen className="w-4 h-4 mr-2 text-accent-gold" />
-                          <span>Kids' Programs</span>
-                        </button>
-                      </motion.div>
+                    <Icon className={`w-4 h-4 ${isActive ? 'text-accent-gold' : 'text-text-sage/70'}`} />
+                    <span>{item.label}</span>
+                    {isActive && (
+                      <motion.span 
+                        layoutId="activeNavIndicator" 
+                        className="absolute bottom-0 left-3 right-3 h-[2px] bg-accent-gold rounded-full"
+                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      />
                     )}
-                  </AnimatePresence>
-                </div>
-
-                {/* Remaining Items */}
-                {regularNavItems.slice(1).map((item) => {
-                  const Icon = item.icon;
-                  const isActive = item.isActive;
-                  return (
-                    <button
-                      key={item.label}
-                      onClick={item.onClick}
-                      className={`relative flex items-center space-x-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
-                        isActive 
-                          ? 'text-accent-gold bg-panel-dark border border-accent-gold/20' 
-                          : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
-                      }`}
-                      id={`nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
-                    >
-                      <Icon className={`w-4 h-4 ${isActive ? 'text-accent-gold' : 'text-text-sage/70'}`} />
-                      <span>{item.label}</span>
-                      {isActive && (
-                        <motion.span 
-                          layoutId="activeNavIndicator" 
-                          className="absolute bottom-0 left-3 right-3 h-[2px] bg-accent-gold rounded-full"
-                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                        />
-                      )}
-                    </button>
-                  );
-                })}
-              </>
+                  </button>
+                );
+              })
             )}
           </nav>
 
           {/* Contact CTA */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center space-x-3">
+            <a 
+              href="https://instagram.com/qalbiya_institute"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-[#EAD5D8] bg-white hover:bg-[#FAF0F2] text-[#8E4B59] hover:text-[#743C47] shadow-sm transition-all duration-300"
+              title="Follow us on Instagram @qalbiya_institute"
+              id="header-insta-btn"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
             {isKids ? (
               <a 
                 href="https://wa.me/918145363290?text=Assalamu%20Alaikum%2C%20I%20am%20interested%20in%20enrolling%20my%20child%20in%20Qalbiya%20Islamic%20Institute."
@@ -283,91 +220,38 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                   </button>
                 ))
               ) : (
-                <>
-                  {/* Home Item */}
-                  {(() => {
-                    const item = regularNavItems[0];
-                    const Icon = item.icon;
-                    const isActive = item.isActive;
-                    return (
-                      <button
-                        key={item.label}
-                        onClick={item.onClick}
-                        className={`flex w-full items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                          isActive 
-                            ? 'bg-panel-dark text-accent-gold border border-accent-gold/20' 
-                            : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
-                        }`}
-                        id={`mobile-nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
-                      >
-                        <Icon className="w-5 h-5 text-accent-gold" />
-                        <span>{item.label}</span>
-                      </button>
-                    );
-                  })()}
-
-                  {/* Programs Expandable Toggle */}
-                  <div className="space-y-1">
+                regularNavItems.map((item) => {
+                  const Icon = item.icon;
+                  const isActive = item.isActive;
+                  return (
                     <button
-                      onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
-                      className={`flex w-full items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                        currentRoute === 'women' || currentRoute === 'kids'
+                      key={item.label}
+                      onClick={item.onClick}
+                      className={`flex w-full items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                        isActive 
                           ? 'bg-panel-dark text-accent-gold border border-accent-gold/20' 
                           : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
                       }`}
-                      id="mobile-nav-item-programs"
+                      id={`mobile-nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
                     >
-                      <div className="flex items-center space-x-3">
-                        <BookOpen className="w-5 h-5 text-accent-gold" />
-                        <span>Programs</span>
-                      </div>
-                      <ChevronDown className={`w-4 h-4 text-accent-gold transition-transform duration-300 ${isMobileDropdownOpen ? 'rotate-180' : ''}`} />
+                      <Icon className="w-5 h-5 text-accent-gold" />
+                      <span>{item.label}</span>
                     </button>
-                    
-                    {isMobileDropdownOpen && (
-                      <div className="pl-6 space-y-1 bg-panel-light/20 rounded-xl py-1">
-                        <button
-                          onClick={() => { handleNavClick('women'); setIsOpen(false); }}
-                          className="flex w-full items-center px-4 py-2.5 rounded-lg text-sm font-medium text-text-sage hover:text-accent-gold transition-colors cursor-pointer text-left"
-                        >
-                          <Heart className="w-4 h-4 mr-2 text-rose-400" />
-                          <span>Women's Programs</span>
-                        </button>
-                        <button
-                          onClick={() => { handleNavClick('kids'); setIsOpen(false); }}
-                          className="flex w-full items-center px-4 py-2.5 rounded-lg text-sm font-medium text-text-sage hover:text-accent-gold transition-colors cursor-pointer text-left"
-                        >
-                          <BookOpen className="w-4 h-4 mr-2 text-accent-gold" />
-                          <span>Kids' Programs</span>
-                        </button>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Remaining Items */}
-                  {regularNavItems.slice(1).map((item) => {
-                    const Icon = item.icon;
-                    const isActive = item.isActive;
-                    return (
-                      <button
-                        key={item.label}
-                        onClick={item.onClick}
-                        className={`flex w-full items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                          isActive 
-                            ? 'bg-panel-dark text-accent-gold border border-accent-gold/20' 
-                            : 'text-text-sage hover:text-text-cream hover:bg-panel-light/30'
-                        }`}
-                        id={`mobile-nav-item-${item.label.toLowerCase().replace("'", "").replace(" ", "-")}`}
-                      >
-                        <Icon className="w-5 h-5 text-accent-gold" />
-                        <span>{item.label}</span>
-                      </button>
-                    );
-                  })}
-                </>
+                  );
+                })
               )}
 
-              <div className="pt-4 border-t border-brand-border">
+              <div className="pt-4 border-t border-brand-border space-y-2.5">
+                <a 
+                  href="https://instagram.com/qalbiya_institute"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center space-x-2 px-4 py-3 rounded-xl border border-[#EAD5D8] bg-white text-[#8E4B59] font-semibold tracking-wide text-center transition-all duration-300 hover:bg-[#FAF0F2]"
+                  id="mobile-nav-cta-instagram"
+                >
+                  <Instagram className="w-5 h-5 shrink-0" />
+                  <span>Follow @qalbiya_institute</span>
+                </a>
                 {isKids ? (
                   <a 
                     href="https://wa.me/918145363290?text=Assalamu%20Alaikum%2C%20I%20am%20interested%20in%20enrolling%20my%20child%20in%20Qalbiya%20Islamic%20Institute."

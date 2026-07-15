@@ -38,6 +38,16 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
       course: "Kids' Deeniyat Graduate"
     },
     {
+      text: "The Seerat-un-Nabi course was a defining chapter of my life. It brought immense positivity, teaching me the true purpose of living by showing how the Prophet ﷺ faced every hardship with beautiful patience (sabr). It's a true life-changer that connects your heart to Allah.",
+      author: "Sadaf Khurshid",
+      course: "Seerat un Nabi Graduate"
+    },
+    {
+      text: "Alhamdulillah, this course has completely transformed my life. It didn't just teach us the Seerah; Sister Mustara taught us how to implement it. My character (akhlaq) has improved, my trust (tawakkul) in Allah has deepened, and I now face hardships with patience (sabr), knowing that ease always follows difficulty.",
+      author: "Raukaia Khatoon",
+      course: "Seerat un Nabi Graduate"
+    },
+    {
       text: "This was not a history class — it was a spiritual hospital. It reshaped my marriage, my parenting, and how I treat my parents. I finally understand what character (akhlaq) means.",
       author: "Sister Maryam, London",
       course: "Seerah Course Graduate"
@@ -45,10 +55,10 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDF2F4] text-[#2E1F21] space-y-14 pb-14 transition-colors duration-500">
+    <div className="min-h-screen bg-[#FDF2F4] text-[#2E1F21] space-y-24 pb-24 transition-colors duration-500">
       
       {/* SECTION 1 — Hero (Above the Fold) */}
-      <section className="relative overflow-hidden py-10 sm:py-14 lg:py-16" id="hero-section">
+      <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32" id="hero-section">
         {/* Soft, beautiful pink/rose glows */}
         <div className="absolute top-1/4 left-1/2 -z-10 h-[350px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EAB1BB]/25 blur-[120px]" />
         <div className="absolute bottom-10 right-10 -z-10 h-[280px] w-[280px] rounded-full bg-[#E59CA8]/15 blur-[100px]" />
@@ -240,7 +250,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-left max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4 text-left max-w-7xl mx-auto">
             {testimonies.map((testimony, idx) => (
               <motion.div
                 key={idx}
