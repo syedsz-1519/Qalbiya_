@@ -4,7 +4,7 @@ import studyCompanionship from '../assets/images/study_companionship_17840487384
 
 export const AboutPage: React.FC = () => {
   return (
-    <div className="space-y-20 pb-20 max-w-5xl mx-auto px-4 sm:px-6">
+    <div className="space-y-12 pb-12 max-w-5xl mx-auto px-4 sm:px-6">
       
       {/* Intro Header */}
       <section className="text-center space-y-4 pt-10">

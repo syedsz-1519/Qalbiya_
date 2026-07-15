@@ -66,7 +66,7 @@ export const FreeCoursesPage: React.FC = () => {
     : freeItems.filter(item => item.category === activeTab);
 
   return (
-    <div className="space-y-16 pb-20 max-w-5xl mx-auto px-4 sm:px-6">
+    <div className="space-y-12 pb-12 max-w-5xl mx-auto px-4 sm:px-6">
       
       {/* Page Header */}
       <section className="text-center space-y-4 pt-10">

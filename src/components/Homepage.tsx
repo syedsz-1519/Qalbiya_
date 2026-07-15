@@ -45,10 +45,10 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDF2F4] text-[#2E1F21] space-y-24 pb-24 transition-colors duration-500">
+    <div className="min-h-screen bg-[#FDF2F4] text-[#2E1F21] space-y-14 pb-14 transition-colors duration-500">
       
       {/* SECTION 1 — Hero (Above the Fold) */}
-      <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32" id="hero-section">
+      <section className="relative overflow-hidden py-10 sm:py-14 lg:py-16" id="hero-section">
         {/* Soft, beautiful pink/rose glows */}
         <div className="absolute top-1/4 left-1/2 -z-10 h-[350px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EAB1BB]/25 blur-[120px]" />
         <div className="absolute bottom-10 right-10 -z-10 h-[280px] w-[280px] rounded-full bg-[#E59CA8]/15 blur-[100px]" />

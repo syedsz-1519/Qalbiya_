@@ -29,10 +29,10 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
 
   if (category === 'kids') {
     return (
-      <div className="bg-bg-deep text-text-cream min-h-screen pb-24 transition-colors duration-300">
+      <div className="bg-bg-deep text-text-cream min-h-screen pb-12 transition-colors duration-300">
         
         {/* Hub Hero Banner */}
-        <section className="text-center pt-16 pb-12 px-4 space-y-6" id="kids-hub-hero">
+        <section className="text-center pt-10 pb-6 px-4 space-y-4" id="kids-hub-hero">
           <span className="font-sans text-[11px] font-extrabold tracking-[0.18em] uppercase text-text-sage mb-2 block">
             NURTURING THE NEXT GENERATION
           </span>
@@ -351,10 +351,10 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
 
   // Fallback to Women's Hub Layout (Dark, Classic style)
   return (
-    <div className="space-y-16 pb-20">
+    <div className="space-y-12 pb-12">
       
       {/* Hub Hero Banner */}
-      <section className="text-center space-y-4 pt-10" id="hub-hero">
+      <section className="text-center space-y-3 pt-6" id="hub-hero">
         <div className="inline-flex items-center space-x-2 rounded-full border border-accent-gold/20 bg-panel-dark px-4.5 py-1.5 text-xs font-semibold text-accent-gold tracking-wide">
           <Heart className="w-3.5 h-3.5 text-rose-400" />
           <span>Sisters Academic Circles</span>
