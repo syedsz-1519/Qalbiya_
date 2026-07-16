@@ -9,7 +9,7 @@ export const FreeCoursesPage: React.FC = () => {
       badge: "Gift",
       desc: "An elegant, custom-translated compilation of the authentic protective prayers and daily remembrances from the Sunnah. Clean typography with word-by-word Urdu and English translations.",
       actionText: "Request PDF on WhatsApp",
-      whatsappMsg: "Assalamu Alaikum Sister Mustara, I would love to receive the free Daily Adhkar Guide PDF."
+      whatsappMsg: "Assalamu Alaikum Ms. Mustara, I would love to receive the free Daily Adhkar Guide PDF."
     },
     {
       title: "Saturday Spiritual Sisterhood Circle",
@@ -17,7 +17,7 @@ export const FreeCoursesPage: React.FC = () => {
       badge: "Live Meet",
       desc: "Join our weekly 45-minute live circle on Saturday evenings. We reflect on a single character trait of the Prophet ﷺ and share friendly support in small, private Google Meet groups.",
       actionText: "Reserve Free Saturday Seat",
-      whatsappMsg: "Assalamu Alaikum Sister Mustara, I want to RSVP and reserve a seat for the upcoming Saturday Sisterhood Circle."
+      whatsappMsg: "Assalamu Alaikum Ms. Mustara, I want to RSVP and reserve a seat for the upcoming Saturday Sisterhood Circle."
     },
     {
       title: "Arabic Calligraphy Introductory Workshop",
@@ -25,7 +25,7 @@ export const FreeCoursesPage: React.FC = () => {
       badge: "Masterclass",
       desc: "A calm, meditative video tutorial teaching the foundations of the elegant Thuluth script. Learn correct stroke dynamics, reed pen handling, and pure artistic balance.",
       actionText: "Request Access to Video Link",
-      whatsappMsg: "Assalamu Alaikum Sister Mustara, I am interested in watching the free Arabic Calligraphy introductory workshop video."
+      whatsappMsg: "Assalamu Alaikum Ms. Mustara, I am interested in watching the free Arabic Calligraphy introductory workshop video."
     }
   ];
 
@@ -97,7 +97,7 @@ export const FreeCoursesPage: React.FC = () => {
               Weekly Reminders & Du'as Channel
             </h3>
             <p className="text-xs sm:text-sm leading-relaxed text-text-sage">
-              We compile and share high-quality, authentic textual graphics, daily ad-hoc reflections, and direct advice from Sister Mustara on our private, safe Telegram & WhatsApp broadcast list. No marketing spam, no clutter — just nourishment for your soul.
+              We compile and share high-quality, authentic textual graphics, daily ad-hoc reflections, and direct advice from Ms. Mustara on our private, safe Telegram & WhatsApp broadcast list. No marketing spam, no clutter — just nourishment for your soul.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -114,7 +114,7 @@ export const FreeCoursesPage: React.FC = () => {
 
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
             <a
-              href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Sister%20Mustara%2C%20please%20add%20my%20number%20to%20the%20private%20Qalbiya%20weekly%20spiritual%2520reminders%20list."
+              href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Ms.%20Mustara%2C%20please%20add%20my%20number%20to%20the%20private%20Qalbiya%20weekly%20spiritual%2520reminders%20list."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-2 rounded-xl bg-accent-gold hover:bg-accent-gold-light text-bg-deep px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300"

@@ -190,7 +190,7 @@ export const TermsAndConditionsPage: React.FC<TermsAndConditionsPageProps> = ({ 
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
           <a
-            href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Sister%20Mustara%2C%20I%20have%20a%20question%20regarding%20the%20Terms%20%26%20Conditions."
+            href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Ms.%20Mustara%2C%20I%20have%20a%20question%20regarding%20the%20Terms%20%26%20Conditions."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-5 py-2.5 rounded-full inline-flex items-center gap-2 transition-colors cursor-pointer w-full sm:w-auto justify-center shadow-sm"

@@ -37,7 +37,7 @@ export const ContactPage: React.FC = () => {
           
           {/* WhatsApp Direct Action Button */}
           <a
-            href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Sister%20Mustara%2C%20I%20have%20a%20question%20regarding%20Qalbiya%20Islamic%20Institute."
+            href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Ms.%20Mustara%2C%20I%20have%20a%20question%20regarding%20Qalbiya%20Islamic%20Institute."
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-emerald-500/40 transition-all duration-300 text-text-cream"

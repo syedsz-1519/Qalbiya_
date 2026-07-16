@@ -57,7 +57,7 @@ export default function App() {
           break;
         case 'contact':
           title = "Contact Us & WhatsApp Support - Qalbiya Islamic Institute";
-          description = "Get in touch with Sister Mustara and our admissions team. Connect directly via WhatsApp or Instagram DM for fast support.";
+          description = "Get in touch with Ms. Mustara and our admissions team. Connect directly via WhatsApp or Instagram DM for fast support.";
           break;
         case 'refund-policy':
           title = "Refund Policy - Qalbiya Islamic Institute";

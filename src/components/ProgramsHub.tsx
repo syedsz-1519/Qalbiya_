@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion } from 'motion/react';
-import { Heart, BookOpen, Sparkles, MessageCircle, Info, ShieldCheck, Instagram, MessageSquare, ArrowRight, Quote } from 'lucide-react';
+import { Heart, BookOpen, Sparkles, MessageCircle, Info, ShieldCheck, Instagram, MessageSquare, ArrowRight, Quote, Laptop, Tablet, Smartphone } from 'lucide-react';
 import { Course, Route } from '../types';
 import { CourseCard } from './CourseCard';
 
@@ -69,12 +69,18 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
             >
               <div>
                 {/* Badges */}
-                <div className="flex items-center space-x-3 mb-8">
+                <div className="flex flex-wrap items-center gap-3 mb-8">
                   <span className="bg-accent-gold-light text-accent-gold-dark font-bold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md">
                     1.5-2 YEARS
                   </span>
                   <span className="text-accent-gold font-bold text-[10px] tracking-[0.15em] uppercase">
                     FLAGSHIP PROGRAM
+                  </span>
+                  <span className="inline-flex items-center gap-1 bg-slate-950 px-2.5 py-1 rounded-md text-[10px] text-accent-gold border border-brand-border font-semibold uppercase tracking-wider">
+                    <Laptop className="w-3 h-3 text-accent-gold" />
+                    <Tablet className="w-3 h-3 text-accent-gold" />
+                    <Smartphone className="w-3 h-3 text-accent-gold" />
+                    <span className="ml-0.5">Online</span>
                   </span>
                 </div>
 
@@ -132,6 +138,14 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
             >
               {/* Image at top */}
               <div className="relative w-full h-48 sm:h-52 overflow-hidden">
+                {/* Online Presence Device Indicator Overlay */}
+                <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 rounded-full bg-slate-950/80 px-2.5 py-1 text-white border border-white/10 backdrop-blur-sm shadow-sm">
+                  <Laptop className="w-3 h-3 text-[#D4AF37]" />
+                  <Tablet className="w-3 h-3 text-[#D4AF37]" />
+                  <Smartphone className="w-3 h-3 text-[#D4AF37]" />
+                  <span className="text-[9px] font-extrabold uppercase tracking-widest text-[#D4AF37] ml-1">Live Online</span>
+                </div>
+
                 <img 
                   src={quranRehalImg} 
                   alt="Noorani Qaida Qur'an Stand" 
@@ -194,7 +208,7 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
                 <div className="space-y-3">
                   <Quote className="w-8 h-8 text-accent-gold/10" />
                   <p className="text-xs sm:text-sm italic text-text-sage leading-relaxed">
-                    "Sister Mustara created a space so warm and gentle that I actually looked forward to making mistakes because of how lovingly she guided me to fix them. My recitation has completely changed."
+                    "Ms. Mustara created a space so warm and gentle that I actually looked forward to making mistakes because of how lovingly she guided me to fix them. My recitation has completely changed."
                   </p>
                 </div>
                 <div className="pt-3 border-t border-brand-border/60 mt-4">
@@ -412,7 +426,7 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
               <div className="space-y-3">
                 <Quote className="w-8 h-8 text-accent-gold/10" />
                 <p className="text-xs sm:text-sm italic text-text-sage leading-relaxed">
-                  "Sister Mustara created a space so warm and gentle that I actually looked forward to making mistakes because of how lovingly she guided me to fix them. My recitation has completely changed."
+                  "Ms. Mustara created a space so warm and gentle that I actually looked forward to making mistakes because of how lovingly she guided me to fix them. My recitation has completely changed."
                 </p>
               </div>
               <div className="pt-3 border-t border-brand-border/30 mt-4">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Layers, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Layers, Clock, ArrowRight, Laptop, Tablet, Smartphone } from 'lucide-react';
 import { Course } from '../types';
 
 interface CourseCardProps {
@@ -23,6 +23,14 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onSelect }) => {
             {course.badge}
           </div>
         )}
+
+        {/* Online Presence Device Indicator Overlay */}
+        <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 rounded-full bg-slate-950/80 px-2.5 py-1 text-white border border-white/10 backdrop-blur-sm shadow-sm">
+          <Laptop className="w-3 h-3 text-[#D4AF37]" />
+          <Tablet className="w-3 h-3 text-[#D4AF37]" />
+          <Smartphone className="w-3 h-3 text-[#D4AF37]" />
+          <span className="text-[9px] font-extrabold uppercase tracking-widest text-[#D4AF37] ml-1">Live Online</span>
+        </div>
         
         <img
           src={course.image}
@@ -81,7 +89,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onSelect }) => {
           </button>
 
           <a
-            href={`https://wa.me/918145363290?text=Assalamu%20Alaikum%20Sister%20Mustara%2C%20I%20am%20sincerely%20interested%20in%20registering%20for%20the%20${encodeURIComponent(course.title)}.`}
+            href={`https://wa.me/918145363290?text=Assalamu%20Alaikum%20Ms.%20Mustara%2C%20I%20am%20sincerely%20interested%20in%20registering%20for%20the%20${encodeURIComponent(course.title)}.`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-11 md:h-9 items-center justify-center rounded-xl bg-accent-sage/20 border border-accent-sage/30 px-3.5 text-xs font-semibold text-text-cream transition-all duration-300 hover:bg-emerald-500 hover:text-bg-deep hover:border-emerald-500"

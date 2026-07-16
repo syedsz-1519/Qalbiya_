@@ -37,7 +37,7 @@ export const AboutPage: React.FC = () => {
           <div className="p-6 rounded-2xl border border-brand-border bg-panel-dark/60 italic font-medium text-text-cream relative">
             <Quote className="absolute -top-3 -left-2 w-8 h-8 text-accent-gold/20" />
             "If your deen classes don't make you feel loved by your Creator and your teacher, something in the methodology is broken. We teach to heal, not to stress."
-            <span className="block text-xs font-semibold text-accent-gold mt-2.5">— Sister Mustara, Founder</span>
+            <span className="block text-xs font-semibold text-accent-gold mt-2.5">— Ms. Mustara, Founder</span>
           </div>
         </div>
 
@@ -105,7 +105,7 @@ export const AboutPage: React.FC = () => {
         <ShieldAlert className="w-10 h-10 text-accent-gold mx-auto" />
         <h3 className="serif-heading text-2xl font-bold text-text-cream">The Anti-Corporate Manifesto</h3>
         <p className="max-w-3xl mx-auto text-sm leading-relaxed text-text-sage">
-          We reject automated emails, robotic ticketing systems, and hidden subscription terms. At Qalbiya, your primary contact method is directly WhatsApping or DM'ing the founder, <strong>Sister Mustara</strong>, or your direct mentor. There are no middlemen. Sincerity and human communication are our baseline.
+          We reject automated emails, robotic ticketing systems, and hidden subscription terms. At Qalbiya, your primary contact method is directly WhatsApping or DM'ing the founder, <strong>Ms. Mustara</strong>, or your direct mentor. There are no middlemen. Sincerity and human communication are our baseline.
         </p>
         <div className="flex justify-center gap-4 pt-2">
           <a 

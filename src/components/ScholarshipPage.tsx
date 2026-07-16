@@ -86,8 +86,8 @@ export const ScholarshipPage: React.FC<ScholarshipPageProps> = ({ courses, initi
   };
 
   const whatsappMessage = submittedApp 
-    ? `Assalamu Alaikum Sister Mustara, I have just submitted a confidential Scholarship/Sponsorship application for the course "${submittedApp.course}" under the name "${submittedApp.fullName}". I would love to connect and proceed with the verification.`
-    : `Assalamu Alaikum Sister Mustara, I am writing to inquire about the confidential scholarship application process.`;
+    ? `Assalamu Alaikum Ms. Mustara, I have just submitted a confidential Scholarship/Sponsorship application for the course "${submittedApp.course}" under the name "${submittedApp.fullName}". I would love to connect and proceed with the verification.`
+    : `Assalamu Alaikum Ms. Mustara, I am writing to inquire about the confidential scholarship application process.`;
 
   const whatsappUrl = `https://wa.me/918145363290?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -115,7 +115,7 @@ export const ScholarshipPage: React.FC<ScholarshipPageProps> = ({ courses, initi
           <div className="space-y-2">
             <h3 className="serif-heading text-base font-bold text-text-cream">Our Confidentiality Commitment</h3>
             <p>
-              Your application is treated with the highest level of respect and privacy. Only Sister Mustara and our selection committee will see your application. We will never disclose who is attending on a scholarship to other peers or students.
+              Your application is treated with the highest level of respect and privacy. Only Ms. Mustara and our selection committee will see your application. We will never disclose who is attending on a scholarship to other peers or students.
             </p>
             <p>
               Once your application is submitted, you can also click the quick-link to connect directly on WhatsApp to coordinate batch timings.
@@ -409,11 +409,11 @@ export const ScholarshipPage: React.FC<ScholarshipPageProps> = ({ courses, initi
                 </div>
                 <div className="flex items-center gap-3 shrink-0">
                   <span className="inline-flex items-center rounded-full bg-accent-gold/15 px-2.5 py-0.5 text-[10px] font-semibold text-accent-gold border border-accent-gold/10">
-                    Pending Sister Verification
+                    Pending Ms. Verification
                   </span>
                   
                   <a 
-                    href={`https://wa.me/918145363290?text=Assalamu%20Alaikum%20Sister%20Mustara%2C%20I%20am%20following%2520up%20on%20my%20sponsorship%20request%20for%20${encodeURIComponent(app.fullName)}%20for%20the%20${encodeURIComponent(app.course)}%20course.`}
+                    href={`https://wa.me/918145363290?text=Assalamu%20Alaikum%20Ms.%20Mustara%2C%20I%20am%20following%2520up%20on%20my%20sponsorship%20request%20for%20${encodeURIComponent(app.fullName)}%20for%20the%20${encodeURIComponent(app.course)}%20course.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500 hover:text-bg-deep transition-all duration-300"

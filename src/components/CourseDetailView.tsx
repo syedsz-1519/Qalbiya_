@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, Calendar, Layers, Clock, HelpCircle, ArrowRight, UserCheck, MessageSquare, ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronLeft, Calendar, Layers, Clock, HelpCircle, ArrowRight, UserCheck, MessageSquare, ChevronDown, ChevronUp, Laptop, Tablet, Smartphone } from 'lucide-react';
 import { Course } from '../types';
 
 interface CourseDetailViewProps {
@@ -19,7 +19,7 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const whatsappMessage = `Assalamu Alaikum Sister Mustara, I am sincerely interested in enrolling in the "${course.title}" course. Please guide me regarding the enrollment schedule and free trial assessment.`;
+  const whatsappMessage = `Assalamu Alaikum Ms. Mustara, I am sincerely interested in enrolling in the "${course.title}" course. Please guide me regarding the enrollment schedule and free trial assessment.`;
   const whatsappUrl = `https://wa.me/918145363290?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
@@ -70,6 +70,14 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
         {/* Right image framing */}
         <div className="lg:col-span-5 flex justify-center">
           <div className="relative w-full max-w-sm aspect-[4/3] sm:aspect-square rounded-3xl overflow-hidden border border-brand-border bg-panel-dark shadow-2xl">
+            {/* Online Presence Device Indicator Overlay */}
+            <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 rounded-full bg-slate-950/80 px-3 py-1.5 text-white border border-white/10 backdrop-blur-sm shadow-md">
+              <Laptop className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <Tablet className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <Smartphone className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#D4AF37] ml-1">Live Online Class</span>
+            </div>
+
             <img
               src={course.image}
               alt={course.title}
@@ -196,7 +204,7 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
 
           {/* Founder Quote */}
           <div className="p-5 rounded-2xl border border-brand-border bg-panel-dark/50 italic text-xs leading-relaxed text-text-sage space-y-2">
-            <p className="text-[10px] font-bold text-accent-gold uppercase tracking-widest not-italic">Sister Mustara's Note</p>
+            <p className="text-[10px] font-bold text-accent-gold uppercase tracking-widest not-italic">Ms. Mustara's Note</p>
             <p>"{course.teacherNote}"</p>
           </div>
 

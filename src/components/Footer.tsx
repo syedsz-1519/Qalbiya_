@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
     } catch (error) {
       console.error('Error sending message:', error);
       // Fail gracefully and show simulated success so user has a perfect offline experience
-      setSubmitStatus('✓ Saved locally! Sister Mustara will be notified.');
+      setSubmitStatus('✓ Saved locally! Ms. Mustara will be notified.');
       setMessageSent(true);
       setQuickMessage('');
     } finally {
@@ -140,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
                   id="footer-link-whatsapp"
                 >
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse shrink-0"></span>
-                  <span className="underline decoration-emerald-800/30 hover:decoration-current">WhatsApp Sister Mustara</span>
+                  <span className="underline decoration-emerald-800/30 hover:decoration-current">WhatsApp Ms. Mustara</span>
                 </a>
                 <a 
                   href="https://instagram.com/qalbiya_institute" 
@@ -245,7 +245,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
           {/* Interactive Block: Fast Note & Newsletter */}
           <div className="md:col-span-4 space-y-6">
             <div className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-widest text-[#743C47]">Drop Sister Mustara a Reflection</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#743C47]">Drop Ms. Mustara a Reflection</h4>
               <p className="text-xs text-[#5C464A]">Have questions or simply want to send du'as? Leave your note below.</p>
               
               <form onSubmit={handleMessageSubmit} className="space-y-2" id="footer-message-form">

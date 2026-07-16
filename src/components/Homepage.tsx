@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Heart, Users, ArrowRight, Quote, ChevronLeft, ChevronRight, BookOpen, Compass, Calendar } from 'lucide-react';
+import { Sparkles, Heart, Users, ArrowRight, Quote, ChevronLeft, ChevronRight, BookOpen, Compass, Calendar, Laptop, Tablet, Smartphone } from 'lucide-react';
 import { Course, Route } from '../types';
 import onlineLearningSetup from '../assets/images/tablet_online_class_1784047721074.jpg';
 import womensOnlineStudy from '../assets/images/womens_online_study_1784048690815.jpg';
@@ -28,7 +28,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
 
   const testimonies = [
     {
-      text: "Sister Mustara created a space so warm and gentle that I actually looked forward to making mistakes because of how lovingly she guided me to fix them. My recitation has completely changed.",
+      text: "Ms. Mustara created a space so warm and gentle that I actually looked forward to making mistakes because of how lovingly she guided me to fix them. My recitation has completely changed.",
       author: "Sister Aisha, Delhi",
       course: "Tajweed 1:1 Graduate"
     },
@@ -43,7 +43,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
       course: "Seerat un Nabi Graduate"
     },
     {
-      text: "Alhamdulillah, this course has completely transformed my life. It didn't just teach us the Seerah; Sister Mustara taught us how to implement it. My character (akhlaq) has improved, my trust (tawakkul) in Allah has deepened, and I now face hardships with patience (sabr), knowing that ease always follows difficulty.",
+      text: "Alhamdulillah, this course has completely transformed my life. It didn't just teach us the Seerah; Ms. Mustara taught us how to implement it. My character (akhlaq) has improved, my trust (tawakkul) in Allah has deepened, and I now face hardships with patience (sabr), knowing that ease always follows difficulty.",
       author: "Raukaia Khatoon",
       course: "Seerat un Nabi Graduate"
     },
@@ -342,6 +342,14 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
                         {course.badge}
                       </div>
                     )}
+
+                    {/* Online Presence Device Indicator Overlay */}
+                    <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 rounded-full bg-slate-950/80 px-2.5 py-1 text-white border border-white/10 backdrop-blur-sm shadow-sm">
+                      <Laptop className="w-3 h-3 text-[#EAB1BB]" />
+                      <Tablet className="w-3 h-3 text-[#EAB1BB]" />
+                      <Smartphone className="w-3 h-3 text-[#EAB1BB]" />
+                      <span className="text-[9px] font-extrabold uppercase tracking-widest text-[#EAB1BB] ml-1">Live Online</span>
+                    </div>
                     
                     <img
                       src={course.image}

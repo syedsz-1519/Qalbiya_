@@ -56,7 +56,7 @@ export const FloatingWhatsApp: React.FC = () => {
               className="hidden sm:block bg-slate-900/95 text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-xl backdrop-blur-sm border border-white/10"
               style={{ pointerEvents: 'none' }}
             >
-              Chat with Sister Mustara
+              Chat with Ms. Mustara
             </motion.div>
           )}
         </AnimatePresence>
@@ -70,7 +70,7 @@ export const FloatingWhatsApp: React.FC = () => {
           whileHover={{ scale: 1.1, translateY: -2 }}
           whileTap={{ scale: 0.9 }}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl hover:bg-[#20ba5a] transition-colors relative group cursor-pointer"
-          aria-label="Contact Sister Mustara on WhatsApp"
+          aria-label="Contact Ms. Mustara on WhatsApp"
           id="floating-whatsapp-btn"
         >
           {/* Ambient Ring Glow */}

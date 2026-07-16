@@ -144,35 +144,34 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
 
           {/* Contact CTA */}
           <div className="hidden md:flex items-center space-x-3">
-            <a 
-              href="https://instagram.com/qalbiya_institute"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-[#EAD5D8] bg-white hover:bg-[#FAF0F2] text-[#8E4B59] hover:text-[#743C47] shadow-sm transition-all duration-300"
-              title="Follow us on Instagram @qalbiya_institute"
-              id="header-insta-btn"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
             {isKids ? (
               <a 
                 href="https://wa.me/918145363290?text=Assalamu%20Alaikum%2C%20I%20am%20interested%20in%20enrolling%20my%20child%20in%20Qalbiya%20Islamic%20Institute."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-accent-gold hover:bg-accent-gold-dark text-white text-xs sm:text-sm font-semibold px-6 py-2.5 rounded-full shadow-sm hover:shadow transition-all duration-300 cursor-pointer"
+                className="relative overflow-hidden inline-flex items-center justify-center bg-gradient-to-r from-accent-gold to-[#D4AF37] hover:from-[#D4AF37] hover:to-[#B8860B] text-bg-deep text-sm font-bold px-6 py-2.5 rounded-xl shadow-lg shadow-accent-gold/15 hover:shadow-accent-gold/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer group"
                 id="nav-cta-enroll-now"
               >
-                Enroll Now
+                <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <span className="relative z-10 flex items-center gap-1.5 font-semibold">
+                  Enroll Now
+                  <Sparkles className="w-4 h-4 text-bg-deep group-hover:rotate-12 transition-transform duration-300" />
+                </span>
               </a>
             ) : (
               <a 
                 href="https://wa.me/918145363290?text=Assalamu%20Alaikum%2C%20I%20am%20interested%20in%20enrolling%20in%20Qalbiya%20Islamic%20Institute."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-accent-gold bg-accent-gold text-bg-deep text-sm font-semibold tracking-wide shadow-md transition-all duration-300 hover:bg-transparent hover:text-accent-gold hover:shadow-lg hover:shadow-accent-gold/10"
+                className="relative group overflow-hidden inline-flex items-center justify-center px-5.5 py-2.5 rounded-xl bg-gradient-to-r from-accent-gold to-[#D4AF37] text-bg-deep text-sm font-bold tracking-wide shadow-lg shadow-accent-gold/15 transition-all duration-300 hover:shadow-accent-gold/30 hover:scale-[1.02] active:scale-[0.98]"
                 id="nav-cta-whatsapp"
               >
-                Contact Sister Mustara
+                {/* Shine Glare effect */}
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+                <span className="relative z-10 flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-emerald-600 animate-pulse" />
+                  Contact Ms. Mustara
+                </span>
               </a>
             )}
           </div>
@@ -242,24 +241,15 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
               )}
 
               <div className="pt-4 border-t border-brand-border space-y-2.5">
-                <a 
-                  href="https://instagram.com/qalbiya_institute"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center space-x-2 px-4 py-3 rounded-xl border border-[#EAD5D8] bg-white text-[#8E4B59] font-semibold tracking-wide text-center transition-all duration-300 hover:bg-[#FAF0F2]"
-                  id="mobile-nav-cta-instagram"
-                >
-                  <Instagram className="w-5 h-5 shrink-0" />
-                  <span>Follow @qalbiya_institute</span>
-                </a>
                 {isKids ? (
                   <a 
                     href="https://wa.me/918145363290?text=Assalamu%20Alaikum%2C%20I%20am%20interested%20in%20enrolling%20my%20child%20in%20Qalbiya%20Islamic%20Institute."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex w-full items-center justify-center space-x-2 px-4 py-3 rounded-full bg-accent-gold text-white font-semibold tracking-wide text-center transition-all duration-300 hover:bg-accent-gold-dark"
+                    className="flex w-full items-center justify-center space-x-2 px-4 py-3.5 rounded-xl bg-gradient-to-r from-accent-gold to-[#D4AF37] text-bg-deep font-bold tracking-wide text-center transition-all duration-300 shadow-md active:scale-95"
                     id="mobile-nav-cta-enroll"
                   >
+                    <Sparkles className="w-4 h-4 shrink-0 text-bg-deep" />
                     <span>Enroll Now</span>
                   </a>
                 ) : (
@@ -267,10 +257,11 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                     href="https://wa.me/918145363290?text=Assalamu%20Alaikum%2C%20I%20am%20interested%20in%20enrolling%20in%20Qalbiya%20Islamic%20Institute."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex w-full items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-accent-gold text-bg-deep font-semibold tracking-wide text-center transition-all duration-300 hover:bg-accent-gold-light"
+                    className="flex w-full items-center justify-center space-x-2 px-4 py-3.5 rounded-xl bg-gradient-to-r from-accent-gold to-[#D4AF37] text-bg-deep font-bold tracking-wide text-center transition-all duration-300 shadow-md active:scale-95"
                     id="mobile-nav-cta-whatsapp"
                   >
-                    <span>WhatsApp Sister Mustara</span>
+                    <span className="h-2 w-2 rounded-full bg-emerald-600 animate-pulse" />
+                    <span>WhatsApp Ms. Mustara</span>
                   </a>
                 )}
               </div>
