@@ -7,17 +7,53 @@ import makkahBg from '../assets/images/makkah_background_1784214785961.jpg';
 export const AsmaUlHusnaSection: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [activePillar, setActivePillar] = useState<number | null>(null);
 
   // Take first 4 names to display on screen initially
   const initialNames = asmaUlHusnaList.slice(0, 4);
 
-  // Filter 99 names based on search query
-  const filteredNames = asmaUlHusnaList.filter(name => 
-    name.transliteration.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    name.translation.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    name.arabic.includes(searchQuery)
-  );
+  // Categorize helper function for 99 Names
+  const getCategoriesForName = (id: number): string[] => {
+    const cats: string[] = ['all'];
+    const mercyIds = [1, 2, 6, 30, 42, 47, 79, 83, 92];
+    const mightIds = [3, 8, 9, 10, 15, 20, 22, 24, 25, 33, 36, 37, 41, 48, 53, 54, 61, 69, 70, 78, 81, 84, 85, 88, 90, 91, 96];
+    const forgivenessIds = [4, 5, 14, 32, 34, 35, 80, 82, 86, 99];
+    const wisdomIds = [19, 26, 27, 28, 29, 31, 43, 46, 50, 51, 57, 93, 94, 98];
+    const provisionIds = [7, 11, 12, 13, 16, 17, 18, 21, 23, 38, 39, 40, 44, 45, 49, 52, 55, 56, 58, 59, 60, 62, 63, 64, 65, 66, 67, 68, 71, 72, 73, 74, 75, 76, 77, 87, 89, 95, 97];
+
+    if (mercyIds.includes(id)) cats.push('mercy');
+    if (mightIds.includes(id)) cats.push('might');
+    if (forgivenessIds.includes(id)) cats.push('forgiveness');
+    if (wisdomIds.includes(id)) cats.push('wisdom');
+    if (provisionIds.includes(id)) cats.push('provision');
+    return cats;
+  };
+
+  // Filter 99 names based on search query and category
+  const filteredNames = asmaUlHusnaList.filter(name => {
+    const matchesSearch = 
+      name.transliteration.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      name.translation.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      name.arabic.includes(searchQuery);
+    
+    if (selectedCategory === 'all') return matchesSearch;
+    return matchesSearch && getCategoriesForName(name.id).includes(selectedCategory);
+  });
+
+  const getCategoryCount = (catId: string) => {
+    if (catId === 'all') return asmaUlHusnaList.length;
+    return asmaUlHusnaList.filter(name => getCategoriesForName(name.id).includes(catId)).length;
+  };
+
+  const categories = [
+    { id: 'all', label: 'All', icon: Sparkles },
+    { id: 'mercy', label: 'Mercy & Love', icon: Heart },
+    { id: 'might', label: 'Might & Majesty', icon: Compass },
+    { id: 'forgiveness', label: 'Forgiveness & Peace', icon: BookOpen },
+    { id: 'wisdom', label: 'Knowledge & Wisdom', icon: Search },
+    { id: 'provision', label: 'Provision & Care', icon: Sparkles },
+  ];
 
   const pillarsOfIslam = [
     {
@@ -73,8 +109,23 @@ export const AsmaUlHusnaSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#FAF0F2] py-16 sm:py-20 border-y border-[#EAD5D8]/40" id="asma-ul-husna-core">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-16">
+    <section className="w-full py-16 sm:py-20 border-y border-[#EAD5D8]/40 relative overflow-hidden" id="asma-ul-husna-core">
+      
+      {/* High-quality Animated Makkah Background with subtle dark blur overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <motion.img 
+          src={makkahBg} 
+          alt="Background of Holy Makkah" 
+          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover select-none"
+          animate={{ scale: [1.02, 1.08, 1.02] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* Subtle dark blur overlay to maintain contrast & theme matching */}
+        <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[3px]" />
+      </div>
+
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
         {/* Top Section Layout - Grid dividing Asma Ul Husna preview and Five Pillars */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -82,28 +133,28 @@ export const AsmaUlHusnaSection: React.FC = () => {
         {/* Left Side: Asma Ul Husna Preview (5 Columns) */}
         <div className="lg:col-span-5 space-y-6">
           <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#8E4B59] flex items-center gap-1.5">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#EAB1BB] flex items-center gap-1.5">
               <Compass className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} /> Divine Attributes
             </span>
-            <h2 className="serif-heading font-serif text-3xl font-bold text-[#2E1F21]">
+            <h2 className="serif-heading font-serif text-3xl font-bold text-white">
               Asma Ul Husna
             </h2>
-            <p className="text-sm text-[#8E4B59] font-medium tracking-wide">
+            <p className="text-sm text-[#EAB1BB] font-medium tracking-wide">
               The 99 Beautiful Names of Allah
             </p>
           </div>
 
-          <p className="text-xs sm:text-sm text-[#5C464A] leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#EAD5D8] leading-relaxed">
             Reflect on the sacred attributes of our Creator to find peace, understanding, and divine companionship in your daily life.
           </p>
 
           {/* Core Quote */}
-          <div className="p-4 rounded-xl bg-white border border-[#EAD5D8] shadow-sm italic text-xs text-[#2E1F21] relative overflow-hidden">
-            <div className="absolute -right-4 -bottom-4 opacity-[0.03] text-5xl font-serif">7:180</div>
+          <div className="p-4 rounded-xl bg-slate-900/60 border border-white/10 shadow-sm italic text-xs text-white relative overflow-hidden">
+            <div className="absolute -right-4 -bottom-4 opacity-[0.05] text-5xl font-serif">7:180</div>
             <p className="relative z-10 leading-relaxed font-serif">
               "To Allah belong the best names, so invoke Him by them."
             </p>
-            <span className="block text-[10px] text-[#8E4B59] font-mono mt-1 text-right">— Surah Al-A'raf [7:180]</span>
+            <span className="block text-[10px] text-[#EAB1BB] font-mono mt-1 text-right">— Surah Al-A'raf [7:180]</span>
           </div>
 
           {/* 4 Name Cards on Screen */}
@@ -147,13 +198,13 @@ export const AsmaUlHusnaSection: React.FC = () => {
         {/* Right Side: Core Fundamentals - The Five Pillars (7 Columns) */}
         <div className="lg:col-span-7 space-y-6">
           <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#8E4B59] flex items-center gap-1.5">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#EAB1BB] flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" /> Core Fundamentals
             </span>
-            <h2 className="serif-heading font-serif text-3xl font-bold text-[#2E1F21]">
+            <h2 className="serif-heading font-serif text-3xl font-bold text-white">
               The Five Pillars of Islam
             </h2>
-            <p className="text-xs sm:text-sm text-[#5C464A] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#EAD5D8] leading-relaxed">
               Every Qalbiya program incorporates these five essential pillars of belief and action to anchor our students' personal and spiritual growth. Click any pillar to explore its deeper significance:
             </p>
           </div>
@@ -319,6 +370,38 @@ export const AsmaUlHusnaSection: React.FC = () => {
 
               {/* Modal Body: Grid of Names */}
               <div className="flex-1 overflow-y-auto p-6 space-y-6">
+                
+                {/* Spiritual Theme Category Filters */}
+                <div className="space-y-2">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#EAD5D8]/60 flex items-center gap-1.5">
+                    <Heart className="w-3 h-3 text-[#D4AF37]" /> Filter by Spiritual State & Reflection Theme
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {categories.map((cat) => {
+                      const CatIcon = cat.icon;
+                      const isActive = selectedCategory === cat.id;
+                      const count = getCategoryCount(cat.id);
+                      return (
+                        <button
+                          key={cat.id}
+                          onClick={() => setSelectedCategory(cat.id)}
+                          className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 cursor-pointer ${
+                            isActive
+                              ? 'bg-[#8E4B59] text-white border border-[#8E4B59] shadow-md shadow-[#8E4B59]/20 font-semibold'
+                              : 'bg-white/5 hover:bg-white/10 text-white/70 hover:text-white border border-white/10'
+                          }`}
+                          id={`category-filter-btn-${cat.id}`}
+                        >
+                          <CatIcon className={`w-3 h-3 ${isActive ? 'text-[#D4AF37]' : 'text-white/40'}`} />
+                          <span>{cat.label}</span>
+                          <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${isActive ? 'bg-black/20 text-white' : 'bg-white/5 text-white/50'}`}>
+                            {count}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
                 
                 {filteredNames.length === 0 ? (
                   <div className="text-center py-20 space-y-3">

@@ -7,6 +7,7 @@ import womensOnlineStudy from '../assets/images/womens_online_study_178404869081
 import kidsOnlineStudy from '../assets/images/kids_online_study_1784047721074.jpg'; // fallback to existing tablet image if any, but we'll use kids_online_study_1784048706942.jpg
 import kidsOnlineStudyGen from '../assets/images/kids_online_study_1784048706942.jpg';
 import founderWorkspace from '../assets/images/founder_workspace_1784048720294.jpg';
+import heroBg from '../assets/images/hero_learning_setup_1784226560154.jpg';
 import { AsmaUlHusnaSection } from './AsmaUlHusnaSection';
 
 interface HomepageProps {
@@ -60,9 +61,21 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
       
       {/* SECTION 1 — Hero (Above the Fold) */}
       <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32" id="hero-section">
-        {/* Soft, beautiful pink/rose glows */}
-        <div className="absolute top-1/4 left-1/2 -z-10 h-[350px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EAB1BB]/25 blur-[120px]" />
-        <div className="absolute bottom-10 right-10 -z-10 h-[280px] w-[280px] rounded-full bg-[#E59CA8]/15 blur-[100px]" />
+        {/* Dynamic, high-quality professional Islamic learning setup background */}
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+          <motion.img 
+            src={heroBg} 
+            alt="Islamic learning setup with Quran, books, laptop and mic" 
+            className="w-full h-full object-cover filter brightness-[1.02] saturate-[0.95] opacity-80"
+            referrerPolicy="no-referrer"
+            animate={{ scale: [1.01, 1.05, 1.01] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+          />
+          {/* Gentle pink/rose glow layer combined with soft backdrop blur */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FDF2F4]/70 via-[#FDF2F4]/50 to-[#FDF2F4]/30 backdrop-blur-[0.5px]" />
+          <div className="absolute top-1/4 left-1/3 h-[250px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EAB1BB]/30 blur-[100px]" />
+          <div className="absolute bottom-10 right-10 h-[220px] w-[220px] rounded-full bg-[#E59CA8]/20 blur-[80px]" />
+        </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -469,6 +482,17 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
 
       {/* SECTION — Asma Ul Husna & Core Fundamentals */}
       <AsmaUlHusnaSection />
+
+      {/* Subtle, ornamental golden separator line */}
+      <div className="flex items-center justify-center my-16 max-w-5xl mx-auto px-4" id="ornamental-golden-separator">
+        <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent" />
+        <div className="mx-4 flex items-center space-x-2.5">
+          <div className="w-1.5 h-1.5 rotate-45 bg-[#D4AF37]/40" />
+          <Sparkles className="w-4 h-4 text-[#D4AF37] animate-pulse" />
+          <div className="w-1.5 h-1.5 rotate-45 bg-[#D4AF37]/40" />
+        </div>
+        <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent" />
+      </div>
 
       {/* SECTION — About Our Founder */}
       <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8" id="about-founder-homepage">

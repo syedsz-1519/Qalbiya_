@@ -16,6 +16,7 @@ import { RefundPolicyPage } from './components/RefundPolicyPage';
 import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { FAQPage } from './components/FAQPage';
+import { DirectMentorship } from './components/DirectMentorship';
 
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState<Route>('home');
@@ -219,6 +220,11 @@ export default function App() {
           </motion.div>
         </AnimatePresence>
       </main>
+      
+      {/* Direct Mentorship Section (Excluding legal policies pages for visual cleanliness) */}
+      {!['refund-policy', 'terms-and-conditions', 'privacy-policy'].includes(currentRoute) && (
+        <DirectMentorship />
+      )}
 
       {/* Universal Footer */}
       <Footer onNavigate={handleNavigate} currentRoute={currentRoute} />
