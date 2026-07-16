@@ -186,10 +186,15 @@ export const CourseDetailView: React.FC<CourseDetailViewProps> = ({
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center space-x-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-bg-deep py-3.5 text-sm font-bold tracking-wider uppercase transition-all duration-300"
+                className="relative group overflow-hidden flex w-full items-center justify-center space-x-2.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#EAB1BB] to-[#D4AF37] hover:from-[#D4AF37] hover:to-[#B8860B] py-3.5 text-xs font-bold uppercase tracking-widest text-bg-deep shadow-lg shadow-accent-gold/25 transition-all duration-500 hover:shadow-accent-gold/45 hover:scale-[1.03] active:scale-[0.98] border border-white/20"
                 id={`register-wa-btn-${course.slug}`}
               >
-                <span>WhatsApp to Register</span>
+                {/* Shining sweep effect */}
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <Laptop className="w-3.5 h-3.5 text-bg-deep animate-pulse" />
+                  <span>WhatsApp to Register</span>
+                </span>
               </a>
 
               <button

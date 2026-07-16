@@ -7,6 +7,7 @@ import womensOnlineStudy from '../assets/images/womens_online_study_178404869081
 import kidsOnlineStudy from '../assets/images/kids_online_study_1784047721074.jpg'; // fallback to existing tablet image if any, but we'll use kids_online_study_1784048706942.jpg
 import kidsOnlineStudyGen from '../assets/images/kids_online_study_1784048706942.jpg';
 import founderWorkspace from '../assets/images/founder_workspace_1784048720294.jpg';
+import { AsmaUlHusnaSection } from './AsmaUlHusnaSection';
 
 interface HomepageProps {
   courses: Course[];
@@ -186,13 +187,37 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
             </div>
 
             <div className="pt-8">
-              <button
+              <motion.button
                 onClick={() => onNavigate('women')}
-                className="w-full flex items-center justify-center space-x-2 rounded-xl bg-[#8E4B59] text-white py-3.5 text-xs font-bold tracking-wider uppercase shadow-md hover:bg-[#743C47] transition-colors"
+                className="w-full relative overflow-hidden flex items-center justify-center space-x-2 rounded-xl bg-[#8E4B59] text-white py-3.5 text-xs font-bold tracking-wider uppercase shadow-md hover:bg-[#743C47] transition-all cursor-pointer"
                 id="split-path-women-btn"
+                animate={{
+                  boxShadow: ["0 4px 6px -1px rgba(142, 75, 89, 0.15)", "0 10px 20px -3px rgba(142, 75, 89, 0.35)", "0 4px 6px -1px rgba(142, 75, 89, 0.15)"],
+                  scale: [1, 1.015, 1]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <span>Explore Women's Programs →</span>
-              </button>
+                {/* Continuous Shimmer sweep */}
+                <motion.div 
+                  className="absolute inset-y-0 w-[60%] bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 pointer-events-none"
+                  animate={{
+                    left: ["-100%", "200%"]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    repeatDelay: 1.5
+                  }}
+                />
+                <span className="relative z-10">Explore Women's Programs →</span>
+              </motion.button>
             </div>
           </div>
 
@@ -224,13 +249,39 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
             </div>
 
             <div className="pt-8">
-              <button
+              <motion.button
                 onClick={() => onNavigate('kids')}
-                className="w-full flex items-center justify-center space-x-2 rounded-xl border border-[#D0B2B7] bg-white text-[#2E1F21] py-3.5 text-xs font-bold tracking-wider uppercase shadow-sm hover:bg-[#FFF5F6] transition-colors"
+                className="w-full relative overflow-hidden flex items-center justify-center space-x-2 rounded-xl border border-[#D0B2B7] bg-white text-[#2E1F21] py-3.5 text-xs font-bold tracking-wider uppercase shadow-sm hover:bg-[#FFF5F6] transition-all cursor-pointer"
                 id="split-path-kids-btn"
+                animate={{
+                  boxShadow: ["0 1px 2px 0 rgba(208, 178, 183, 0.15)", "0 6px 16px 0 rgba(208, 178, 183, 0.35)", "0 1px 2px 0 rgba(208, 178, 183, 0.15)"],
+                  scale: [1, 1.015, 1]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <span>Explore Kids' Programs →</span>
-              </button>
+                {/* Continuous Shimmer sweep */}
+                <motion.div 
+                  className="absolute inset-y-0 w-[60%] bg-gradient-to-r from-transparent via-[#8E4B59]/10 to-transparent -skew-x-12 pointer-events-none"
+                  animate={{
+                    left: ["-100%", "200%"]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    repeatDelay: 1.5,
+                    delay: 0.5
+                  }}
+                />
+                <span className="relative z-10">Explore Kids' Programs →</span>
+              </motion.button>
             </div>
           </div>
 
@@ -415,6 +466,9 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
           </motion.div>
         </AnimatePresence>
       </section>
+
+      {/* SECTION — Asma Ul Husna & Core Fundamentals */}
+      <AsmaUlHusnaSection />
 
       {/* SECTION — About Our Founder */}
       <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8" id="about-founder-homepage">

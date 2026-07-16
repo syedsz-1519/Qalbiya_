@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Calendar, Layers, Clock, ArrowRight, Laptop, Tablet, Smartphone } from 'lucide-react';
 import { Course } from '../types';
+import { motion } from 'motion/react';
 
 interface CourseCardProps {
   course: Course;
@@ -8,9 +9,62 @@ interface CourseCardProps {
 }
 
 export const CourseCard: React.FC<CourseCardProps> = ({ course, onSelect }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const card = cardRef.current;
+    const rect = card.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    
+    // Calculate mouse position relative to the center of the card
+    const mouseX = e.clientX - rect.left - width / 2;
+    const mouseY = e.clientY - rect.top - height / 2;
+
+    // Calculate rotation angles (max 6 degrees tilt for ultra-smooth subtle premium feel)
+    const rY = (mouseX / (width / 2)) * 6;
+    const rX = -(mouseY / (height / 2)) * 6;
+
+    setRotateX(rX);
+    setRotateY(rY);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setRotateX(0);
+    setRotateY(0);
+  };
+
   return (
-    <div 
-      className="group flex flex-col h-full rounded-2xl border border-brand-border bg-panel-dark overflow-hidden shadow-lg transition-all duration-300 hover:border-accent-gold/40 hover:shadow-2xl hover:-translate-y-1.5"
+    <motion.div 
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      animate={{
+        rotateX: isHovered ? rotateX : 0,
+        rotateY: isHovered ? rotateY : 0,
+        scale: isHovered ? 1.025 : 1,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 25,
+        mass: 0.4,
+      }}
+      style={{
+        transformStyle: "preserve-3d",
+        perspective: 1200,
+      }}
+      className="group flex flex-col h-full rounded-2xl border border-brand-border bg-panel-dark overflow-hidden shadow-lg transition-colors duration-300 hover:border-accent-gold/40 hover:shadow-2xl"
       id={`course-card-${course.slug}`}
     >
       {/* Course Thumbnail Image */}
@@ -99,6 +153,6 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onSelect }) => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
