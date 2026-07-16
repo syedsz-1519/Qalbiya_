@@ -117,15 +117,17 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
                     </span>
                   </div>
 
-                  <button
+                  <a
+                    href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Ms.%20Mustara%2C%20I%20am%20sincerely%20interested%20in%20registering%20my%20child%20for%20the%20Juniors%20Deeniyat%20Mastercourse."
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={(e) => {
                       e.stopPropagation();
-                      onSelectCourse('juniors-deeniyat-mastercourse');
                     }}
-                    className="bg-accent-gold hover:bg-accent-gold-dark text-white text-xs font-semibold px-5 py-3.5 sm:py-2.5 rounded-full shadow-sm transition-all duration-300 cursor-pointer"
+                    className="bg-accent-gold hover:bg-accent-gold-dark text-bg-deep text-xs font-bold px-5 py-3 rounded-xl shadow-sm transition-all duration-300 cursor-pointer inline-flex items-center"
                   >
-                    Reserve Spot
-                  </button>
+                    Register Now
+                  </a>
                 </div>
               </div>
             </div>
@@ -174,14 +176,26 @@ export const ProgramsHub: React.FC<ProgramsHubProps> = ({
                 </div>
 
                 <div className="flex items-center justify-between border-t border-brand-border pt-5 mt-4">
-                  <span className="serif-heading text-base font-bold text-text-cream">
-                    Rs. 500/mo
-                  </span>
+                  <div>
+                    <span className="text-[9px] font-extrabold tracking-widest text-text-sage block mb-0.5">
+                      INVESTMENT
+                    </span>
+                    <span className="serif-heading text-base font-bold text-text-cream">
+                      Rs. 500/mo
+                    </span>
+                  </div>
 
-                  <span className="text-accent-gold group-hover:text-accent-gold-dark text-xs font-bold flex items-center space-x-1 transition-colors duration-300">
-                    <span>Learn more</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
+                  <a
+                    href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Ms.%20Mustara%2C%20I%20am%20sincerely%20interested%20in%20registering%20my%20child%20for%20the%20Noorani%20Qaida%20Kids%20course."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className="bg-accent-gold hover:bg-accent-gold-dark text-bg-deep text-xs font-bold px-5 py-3 rounded-xl shadow-sm transition-all duration-300 cursor-pointer inline-flex items-center"
+                  >
+                    Register Now
+                  </a>
                 </div>
               </div>
             </div>

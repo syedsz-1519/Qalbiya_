@@ -136,7 +136,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
                   <p className="text-xs italic text-[#2E1F21] mt-1 font-serif leading-relaxed">
                     "Every sincere seeker belongs in our circle. Sincerity and commitment are our only requirements."
                   </p>
-                  <p className="text-[9px] text-[#6B5256] mt-1 font-semibold">— Sister Mustara</p>
+                  <p className="text-[9px] text-[#6B5256] mt-1 font-semibold">— Ms. Mustara</p>
                 </div>
               </div>
             </div>
@@ -432,7 +432,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2E1F21]/60 via-transparent to-transparent opacity-80" />
               <div className="absolute bottom-4 left-4 right-4 text-center">
-                <span className="text-xs font-semibold text-white/90 uppercase tracking-widest block">Mustara</span>
+                <span className="text-xs font-semibold text-white/90 uppercase tracking-widest block">Ms. Mustara</span>
                 <span className="text-[10px] text-white/70 block mt-0.5">Founder & Head Instructor</span>
               </div>
             </div>
@@ -451,7 +451,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
 
             <div className="space-y-5 text-sm sm:text-base text-[#5C464A] font-serif leading-loose">
               <p>
-                Qalbiya Islamic Institute was founded by Mustara, who has spent the past few years teaching Seerah, Tajweed, and Islamic Studies to students at different stages of their journey.
+                Qalbiya Islamic Institute was founded by Ms. Mustara, who has spent the past few years teaching Seerah, Tajweed, and Islamic Studies to students at different stages of their journey.
               </p>
               <p>
                 Through this experience, she noticed something missing in how deen was often taught — plenty of knowledge, but little guidance on how to actually live it. That realization became the foundation Qalbiya was built on: a place where learning isn't just about gaining ilm, but about real, lasting change.

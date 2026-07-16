@@ -109,7 +109,7 @@ export const AboutPage: React.FC = () => {
         </p>
         <div className="flex justify-center gap-4 pt-2">
           <a 
-            href="https://wa.me/918145363290"
+            href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Ms.%20Mustara%2C%20I%20am%20interested%20in%20learning%20more%20about%20Qalbiya%20Islamic%20Institute."
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-xl bg-accent-gold hover:bg-accent-gold-light text-bg-deep px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300"

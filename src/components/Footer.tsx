@@ -133,7 +133,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, currentRoute }) => {
               <h4 className="text-xs font-bold uppercase tracking-widest text-[#743C47]">Primary Connections</h4>
               <div className="flex flex-col space-y-2.5 text-sm text-[#5C464A]">
                 <a 
-                  href="https://wa.me/918145363290" 
+                  href="https://wa.me/918145363290?text=Assalamu%20Alaikum%20Ms.%20Mustara%2C%20I%20have%20an%20inquiry%20regarding%20Qalbiya%20Islamic%20Institute." 
                   className="flex items-center space-x-2.5 text-emerald-800 hover:text-[#8E4B59] transition-colors duration-300 font-bold"
                   target="_blank"
                   rel="noopener noreferrer"
