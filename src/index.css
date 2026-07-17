@@ -7,9 +7,9 @@
   --font-display: "Libre Caslon Text", serif;
   --font-mono: ui-monospace, SFMono-Regular, monospace;
   
-  --color-bg-deep: #FDF2F4;
+  --color-bg-deep: #fdf5e9;
   --color-panel-dark: #FFFFFF;
-  --color-panel-light: #FAF0F2;
+  --color-panel-light: #faf4e7;
   --color-accent-gold: #8E4B59;
   --color-accent-gold-dark: #743C47;
   --color-accent-gold-light: #FCEDF0;
@@ -32,7 +32,7 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FDF2F4;
+  background: #fdf5e9;
 }
 ::-webkit-scrollbar-thumb {
   background: #EAD5D8;

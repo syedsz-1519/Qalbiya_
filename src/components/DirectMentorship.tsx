@@ -8,7 +8,7 @@ export const DirectMentorship: React.FC = () => {
 
   return (
     <section 
-      className="w-full bg-[#FAF0F2] py-16 sm:py-24 border-t border-[#EAD5D8]/60 relative overflow-hidden" 
+      className="w-full bg-[#faf4e7] py-16 sm:py-24 border-t border-[#EAD5D8]/60 relative overflow-hidden" 
       id="direct-mentorship-section"
     >
       {/* Decorative Background Blobs */}
@@ -40,7 +40,7 @@ export const DirectMentorship: React.FC = () => {
               />
               
               {/* Portrait Frame */}
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 aspect-square rounded-2xl overflow-hidden border-2 border-[#EAD5D8] shadow-md bg-[#FAF0F2] z-10">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 aspect-square rounded-2xl overflow-hidden border-2 border-[#EAD5D8] shadow-md bg-[#faf4e7] z-10">
                 <img
                   src={founderWorkspace}
                   alt="Ms. Mustara - Founder & Head Mentor of Qalbiya Islamic Institute"

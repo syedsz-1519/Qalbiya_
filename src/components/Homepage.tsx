@@ -18,6 +18,7 @@ interface HomepageProps {
 
 export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelectCourse }) => {
   const [activeTab, setActiveTab] = useState<'all' | 'women' | 'kids'>('all');
+  const [isHeroBgLoaded, setIsHeroBgLoaded] = useState(false);
 
   const handleStartJourneyClick = () => {
     const element = document.getElementById('split-path');
@@ -57,22 +58,35 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDF2F4] text-[#2E1F21] space-y-24 pb-24 transition-colors duration-500">
+    <div className="min-h-screen bg-[#fdf5e9] text-[#2E1F21] space-y-24 pb-24 transition-colors duration-500">
       
       {/* SECTION 1 — Hero (Above the Fold) */}
       <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32" id="hero-section">
         {/* Dynamic, high-quality professional Islamic learning setup background */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none bg-[#eedec9]">
+          {/* Skeleton Pulse state when background is loading */}
+          {!isHeroBgLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-r from-[#eedec9] via-[#f7ebd7] to-[#eedec9] animate-pulse" />
+          )}
+          
           <motion.img 
             src={heroBg} 
             alt="Islamic learning setup with Quran, books, laptop and mic" 
-            className="w-full h-full object-cover filter brightness-[1.02] saturate-[0.95] opacity-80"
+            className="w-full h-full object-cover filter brightness-[1.15] saturate-[0.95]"
             referrerPolicy="no-referrer"
-            animate={{ scale: [1.01, 1.05, 1.01] }}
-            transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+            initial={{ opacity: 0, scale: 1.01 }}
+            animate={{ 
+              opacity: isHeroBgLoaded ? 0.9 : 0, 
+              scale: isHeroBgLoaded ? [1.01, 1.05, 1.01] : 1.01 
+            }}
+            transition={{ 
+              opacity: { duration: 0.8, ease: "easeOut" },
+              scale: { duration: 25, repeat: Infinity, ease: "easeInOut" }
+            }}
+            onLoad={() => setIsHeroBgLoaded(true)}
           />
           {/* Gentle pink/rose glow layer combined with soft backdrop blur */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FDF2F4]/70 via-[#FDF2F4]/50 to-[#FDF2F4]/30 backdrop-blur-[0.5px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#fdf5e9]/70 via-[#fdf5e9]/50 to-[#fdf5e9]/30 backdrop-blur-[0.5px]" />
           <div className="absolute top-1/4 left-1/3 h-[250px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EAB1BB]/30 blur-[100px]" />
           <div className="absolute bottom-10 right-10 h-[220px] w-[220px] rounded-full bg-[#E59CA8]/20 blur-[80px]" />
         </div>
@@ -303,7 +317,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
 
       {/* SECTION 3 — Social Proof Strip */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" id="social-proof-strip">
-        <div className="rounded-2xl border border-[#EAD5D8] bg-[#FAF0F2] py-8 px-6 text-center space-y-6 shadow-sm">
+        <div className="rounded-2xl border border-[#EAD5D8] bg-[#faf4e7] py-8 px-6 text-center space-y-6 shadow-sm">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#8E4B59] font-mono flex items-center gap-1.5">
               <Users className="w-4 h-4" /> Trusted globally
@@ -400,7 +414,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
                   id={`featured-card-${course.slug}`}
                 >
                   {/* Course Thumbnail Image */}
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#FAF0F2] border-b border-[#EAD5D8]">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#faf4e7] border-b border-[#EAD5D8]">
                     {course.badge && (
                       <div className="absolute top-3 left-3 z-10 rounded-full bg-[#8E4B59] px-3 py-1 text-[10px] font-bold tracking-wider text-white uppercase shadow-sm border border-[#EAD5D8]/20 backdrop-blur-sm">
                         {course.badge}
@@ -501,7 +515,7 @@ export const Homepage: React.FC<HomepageProps> = ({ courses, onNavigate, onSelec
           
           {/* Left Column: Image & Caption */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border border-[#EAD5D8] shadow-md bg-[#FAF0F2]">
+            <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border border-[#EAD5D8] shadow-md bg-[#faf4e7]">
               <img
                 src={founderWorkspace}
                 alt="About Our Founder - Interactive workspace with laptop online teaching setup"
